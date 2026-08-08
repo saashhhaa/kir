@@ -1,0 +1,60 @@
+:root {
+  /* accent */
+  --accent-color: rgb(0, 0, 255);
+
+  /* text */
+  --main-text: black;
+  --main-text-inverse: white;
+  --secondary-text: grey;
+  --secondary-light-text: rgb(173, 172, 172);
+
+  /* background */
+  --profile-back: black;
+  --feed-back: rgb(208, 208, 208);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 16px;
+  transition: .2s all ease;
+  /* border: 1px red solid; */
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scrollbar-width: none;
+}
+
+
+::selection {
+  background-color: var(--accent-color);
+}
+
+button,
+a {
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover,
+a:hover {
+  filter: brightness(0.8);
+}
+
+@media (max-width: 700px) {
+  * {
+    font-size: 12px;
+  }
+}
