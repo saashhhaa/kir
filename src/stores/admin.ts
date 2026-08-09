@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import { PASSWORD } from '../data/constants'
+import { ADMIN_PASSWORD } from '../data/constants'
 
 export const useAdminStore = defineStore('admin', () => {
   const isAdminLogged = ref(
@@ -9,7 +9,7 @@ export const useAdminStore = defineStore('admin', () => {
 
     //TODO: проверка пароля ДОЛЖНА происходить на бэкенде/сервере!
   async function login(password: string): Promise<boolean> {
-    if (password === PASSWORD) {
+    if (password === ADMIN_PASSWORD) {
       isAdminLogged.value = true
 
       sessionStorage.setItem(
