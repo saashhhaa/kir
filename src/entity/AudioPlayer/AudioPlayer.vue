@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, onUnmounted, watch } from 'vue';
+import { ref, onUnmounted } from 'vue';
 import { useAudioManager } from '../../composables/useAudioManager';
 
 const props = defineProps<{
