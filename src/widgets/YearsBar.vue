@@ -21,5 +21,6 @@ function handleYearClick(year: number) {
 .bar {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 </style>

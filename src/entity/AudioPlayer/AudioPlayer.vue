@@ -21,14 +21,10 @@ function togglePlay() {
   if (isPlaying.value) {
     audio.value.pause();
   } else {
-    registerPlay(audio.value); // сообщаем менеджеру, что играем мы — он остановит остальных
+    registerPlay(audio.value);
     audio.value.play();
   }
 }
-
-// слушаем нативные события play/pause у самого audio,
-// чтобы isPlaying был синхронизирован, даже если паузу вызвал не togglePlay,
-// а другой компонент через audio.value.pause()
 function onPlay() {
   isPlaying.value = true;
 }
@@ -87,8 +83,8 @@ onUnmounted(() => {
 
       <div class="player__flex">
         <button class="player__toggle" @click="togglePlay">
-          <span v-if="!isPlaying">▶</span>
-          <span v-else>⏸</span>
+          <img class="player__icon" v-if="!isPlaying" src="../../assets/images/audio/play.svg" alt="">
+          <img class="player__icon" v-else src="../../assets/images/audio/stop.svg" alt="">
         </button>
         <input
           class="player__seek"
@@ -112,14 +108,13 @@ onUnmounted(() => {
   gap: 16px;
   padding: 12px 16px;
 
-  &__toggle {
-    border: none;
-    color: #ffffff;
+  &__icon {
     cursor: pointer;
-    font-size: 1rem;
+    width: 15px;
+    opacity: .6;
 
-    &:hover {
-      opacity: 0.8;
+      &:hover {
+      opacity: 1;
     }
   }
 
@@ -129,12 +124,12 @@ onUnmounted(() => {
   }
 
   &__title {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     font-weight: 500;
   }
 
   &__artist {
-    font-size: 0.5rem;
+    font-size: 0.7rem;
     color: var(--secondary-light-text);
     margin-bottom: 6px;
   }
