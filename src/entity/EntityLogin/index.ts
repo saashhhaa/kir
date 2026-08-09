@@ -1,0 +1,1 @@
+export { default as EntityLogin } from './EntityLogin.vue'

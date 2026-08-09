@@ -1,0 +1,1 @@
+export {default as EntityLogout} from './EntityLogout.vue'

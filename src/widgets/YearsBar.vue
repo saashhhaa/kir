@@ -1,16 +1,15 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
-import { years } from '../input-data/years.ts';
+import { sortedYears as years } from '../data/years.ts';
 
 import YearCard from '../shared/YearCard/YearCard.vue';
-const openedYear = ref<number | null>(26)
+
+const openedYear = ref(years[0])
 
 function handleYearClick(year: number) {
      openedYear.value = year 
 }
 </script>
-
-
 
 <template>
 <div class="bar">
