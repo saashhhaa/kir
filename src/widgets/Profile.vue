@@ -122,4 +122,23 @@ const logOut = () => {
     margin-top: 7vh;
   }
 }
+
+@media(max-width:800px){
+    .profile {
+        &__main{
+            flex-direction: column;
+        }
+          &__info {
+    margin-bottom: 0vh;
+          }
+    }
+
+    .playlist {
+        width: 100%;
+        max-height: 90px;
+        overflow: hidden;
+        margin-bottom: 5vh;
+    }
+
+}
 </style>
