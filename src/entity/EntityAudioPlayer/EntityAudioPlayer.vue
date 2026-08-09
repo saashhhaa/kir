@@ -83,8 +83,8 @@ onUnmounted(() => {
 
       <div class="player__flex">
         <button class="player__toggle" @click="togglePlay">
-          <img class="player__icon" v-if="!isPlaying" src="../../assets/images/audio/play.svg" alt="">
-          <img class="player__icon" v-else src="../../assets/images/audio/stop.svg" alt="">
+          <img class="player__icon" v-if="!isPlaying" src="@/assets/images/audio/play.svg" alt="">
+          <img class="player__icon" v-else src="@/assets/images/audio/stop.svg" alt="">
         </button>
         <input
           class="player__seek"

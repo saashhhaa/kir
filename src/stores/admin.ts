@@ -35,3 +35,4 @@ export const useAdminStore = defineStore('admin', () => {
     logout,
   }
 })
+console.log('DEBUG password:', import.meta.env.VITE_ADMIN_PASSWORD);

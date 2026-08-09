@@ -44,7 +44,7 @@ const onSubmit = handleSubmit(async (values) => {
   class="modal__button"
 >
   <img
-    src="../../assets/images/common/enter.svg"
+    src="@/assets/images/common/enter.svg"
     alt=""
   >
 </button>

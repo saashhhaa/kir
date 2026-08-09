@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import folder from "../../assets/images/years/folder.svg";
-import folder_open from "../../assets/images/years/folder-open.svg";
+import folder from "@/assets/images/years/folder.svg";
+import folder_open from "@/assets/images/years/folder-open.svg";
 
 interface Props {
   year: number;

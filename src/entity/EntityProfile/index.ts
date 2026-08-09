@@ -1,0 +1,1 @@
+export {default as EntityProfile} from './EntityProfile.vue'

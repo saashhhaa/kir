@@ -1,14 +1,9 @@
-<script setup lang="ts">
-
-
-
-</script>
 
 <template>
   <button class="button">
     <img
       class="button__icon"
-      src="../../assets/images/common/enter.svg"
+      src="@/assets/images/common/enter.svg"
       alt=""
     />
   </button>
