@@ -26,12 +26,12 @@ function handleClick(year: number) {
   </div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 .card {
   display: flex;
   gap: 10px;
   align-items: center;
-  padding: 10px 15px;
+  padding: 10px 30px 10px 15px;
   border: 1px solid var(--secondary-text);
   cursor: pointer;
 

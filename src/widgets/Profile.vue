@@ -43,7 +43,10 @@ const closeLogin = () => {
   width: 100%;
   background-color: var(--profile-back);
   color: var(--main-text-inverse);
-  padding: 5vh 10vw;
+  padding-left: clamp(5vw, 6vw, 10vw);
+  padding-right: clamp(5vw, 6vw, 10vw);
+  padding-top: 10vh;
+  padding-bottom: 10vh;
 
   &__main {
     display: flex;

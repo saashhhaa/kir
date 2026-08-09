@@ -16,6 +16,7 @@
 
   /* border */
   --light-border: 1px solid var( --accent-color);
+  --dark-border: 1px solid var( --secondary-text);
 }
 
 * {

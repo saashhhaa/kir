@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useAdminStore } from '../../stores/admin';
 import { profile } from '../../data/profile';
 import { tracks } from '../../data/tracks';
+import { useAdminStore } from '../../stores/admin';
 import { EntityAudioPlayer } from '../EntityAudioPlayer';
 
 const admin = useAdminStore();
@@ -69,7 +69,7 @@ function handleImageClick() {
     display: flex;
     font-size: .9rem;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
     color: var(--accent-color);
   }
 
@@ -84,7 +84,7 @@ function handleImageClick() {
     background-size: cover;
     aspect-ratio: 1;
     border: var(--light-border);
-    cursor: pointer;
+        cursor: help;
     width: clamp(100px, 15vw, 400px);
 
     &:hover {

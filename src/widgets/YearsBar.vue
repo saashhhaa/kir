@@ -22,5 +22,6 @@ function handleYearClick(year: number) {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  margin-top: 5vh;
 }
 </style>
