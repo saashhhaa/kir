@@ -27,11 +27,13 @@ const filteredPictures = computed(()=>{
     <HashTagBar/>
     <div class="feed__grid">
       <PictureCard
+      v-if="filteredPictures.length !==0"
         v-for="pic in filteredPictures"
         :title="pic.title"
         :img="pic.img"
         :id="pic.id"
       />
+      <p v-else class="feed__oops">૮₍ᵔ⤙ᵔ ₎ა</p>
     </div>
   </div>
   
@@ -50,6 +52,15 @@ const filteredPictures = computed(()=>{
   width: 100%;
 
     grid-template-columns: repeat(4, auto);
+  }
+
+  &__oops {
+    text-align: center;
+    width: 90vw;
+    font-size: 2rem;
+    margin: 0 auto;
+    opacity: .3;
+    cursor: help;
   }
 }
 

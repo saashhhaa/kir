@@ -47,6 +47,7 @@ const closeLogin = () => {
   padding-right: clamp(5vw, 6vw, 10vw);
   padding-top: 10vh;
   padding-bottom: 5vh;
+  
 
   &__main {
     display: flex;

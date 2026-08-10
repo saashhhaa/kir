@@ -41,18 +41,19 @@ function handleImageClick() {
       </div>
 
       <div :class="{'goDown': admin.isAdminLogged }" class="playlist">
+        <p class="playlist__title">‎¸.•´*¨`*‎♫⋆｡♪ ₊˚♬ ﾟ.๋ ⭑•*`¨*`•.¸</p>
         <EntityAudioPlayer v-for="track in tracks" :key="track.src" v-bind="track" />
       </div>
 </template>
 
 <style scoped lang="scss">
 .profile {
-  padding-right: clamp(5vw, 6vw, 10vw);
-  padding-top: 10vh;
+  padding: 0;
     width: 100%;
     display: flex;
     padding: 0;
     gap: 30px;
+    
 
   &__nickname {
     font-size: 2rem;
@@ -103,6 +104,11 @@ function handleImageClick() {
   border: var(--light-border);
   min-width: 30vw;
 
+  &__title {
+    padding: 10px;
+  }
+ 
+
   &.goDown {
     margin-top: 7vh;
   }
@@ -112,9 +118,13 @@ function handleImageClick() {
 @media (max-width: 800px) {
   .playlist {
     width: 100%;
-    max-height: clamp(60px, 12vh, 13vh);
+    max-height: clamp(60px, 13vh, 13vh);
     overflow: hidden;
     margin-bottom: 5vh;
+
+     &__title {
+    display: none;
+  }
   }
 }
 </style>

@@ -20,7 +20,7 @@ defineProps<Props>();
 
 <style scoped lang="scss">
 .card {
-   width: 100%;
+   width: fit-content;
   padding: 2px;
   height: fit-content;
   border: var(--dark-border);
