@@ -47,6 +47,8 @@ function handleImageClick() {
 
 <style scoped lang="scss">
 .profile {
+  padding-right: clamp(5vw, 6vw, 10vw);
+  padding-top: 10vh;
     width: 100%;
     display: flex;
     padding: 0;
