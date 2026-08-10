@@ -7,8 +7,8 @@ export const tracks = [
   // { src: audio1, title: 'священная война', artist: 'урал гайсин' },
   // { src: audio2, title: 'love psalm', artist: 'akira yamaoka' },
   // { src: audio3, title: 'жека уже в гамбурге', artist: 'гроб' },
-  { src: audio3, title: 'теперь мы снова вдвоем', artist: 'порез на собаке' },
-  { src: audio3, title: 'теперь мы снова вдвоем', artist: 'порез на собаке' },
-  { src: audio3, title: 'теперь мы снова вдвоем', artist: 'порез на собаке' },
+  { src: audio4, title: 'теперь мы снова вдвоем', artist: 'порез на собаке' },
+  { src: audio4, title: 'теперь мы снова вдвоем', artist: 'порез на собаке' },
+  { src: audio4, title: 'теперь мы снова вдвоем', artist: 'порез на собаке' },
 
 ];
