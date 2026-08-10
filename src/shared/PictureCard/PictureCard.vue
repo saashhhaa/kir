@@ -3,6 +3,7 @@ interface Props {
   id: number;
   title: string;
   img: string;
+  hashtag? : string;
 }
 
 defineProps<Props>();
@@ -19,35 +20,50 @@ defineProps<Props>();
 
 <style scoped lang="scss">
 .card {
-  width: fit-content;
+   width: 100%;
   padding: 2px;
+  height: fit-content;
   border: var(--dark-border);
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
+  display: inline-block;
   background-color: white;
 
+  margin-bottom: 30px;
+
+  break-inside: avoid;
+
   &__img {
-    width: clamp(10vw, 15vw, 20vw);
-  }
-  &:hover {
-    filter: brightness(0.95);
-  }
-  &:hover &__overlay {
-    opacity: 1;
+    width:100%;
+    display: block;
+    pointer-events: none;
   }
 
+  &:hover {
+    .card__overlay {
+      opacity: 1;
+      background-color: rgba(0, 0, 0, 0.538);
+    }
+  }
   &__overlay {
     position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--main-text-inverse);
-    font-size: .9rem;
-    pointer-events: none;
-    opacity: 0;
+    font-size: 0.9rem;
     text-align: center;
-      overflow-wrap: break-word;
-      max-width: 80%;
+    opacity: 0;
+    pointer-events: none;
+    overflow-wrap: break-word;
+  }
+}
+
+@media (max-width:800px){
+  .card {
+    &__img {
+      width: 40vw;
+    }
   }
 }
 </style>

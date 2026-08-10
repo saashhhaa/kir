@@ -38,7 +38,7 @@ const closeLogin = () => {
   </div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 .profile {
   width: 100%;
   background-color: var(--profile-back);
@@ -46,7 +46,7 @@ const closeLogin = () => {
   padding-left: clamp(5vw, 6vw, 10vw);
   padding-right: clamp(5vw, 6vw, 10vw);
   padding-top: 10vh;
-  padding-bottom: 10vh;
+  padding-bottom: 5vh;
 
   &__main {
     display: flex;
