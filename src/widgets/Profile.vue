@@ -53,6 +53,8 @@ const closeLogin = () => {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
   }
 
   &__main {

@@ -34,7 +34,6 @@ function toggleZoom() {
       />
       <div @click.stop class="picture__img-wrapper">
         <h2 v-if="title" class="picture__title">{{ title }}</h2>
-        <div class="picture__img-wrapper">
           <img
             @click="toggleZoom"
             :src="img"
@@ -42,7 +41,6 @@ function toggleZoom() {
             :class="{ zoom: isZoomed }"
             alt=""
           />
-        </div>
         <p v-if="description" class="picture__description">{{ description }}</p>
         <!-- <EntityAudioPlayer /> -->
       </div>
@@ -62,30 +60,37 @@ function toggleZoom() {
   width: 100vw;
   height: 100vh;
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 100;
   background-color: rgba(0, 0, 0, 0.842);
+  overflow: hidden;
 
   &__content {
     margin: 0 5vw;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     width: 100%;
+    height: 100%;
   }
 
   &__img-wrapper {
     display: flex;
-    gap: 10px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 10px;
     text-align: center;
     position: relative;
-    height: fit-content;
+
+    /*
+      Ограничиваем область, в которой может находиться картинка
+    */
+    max-width: 80vw;
+    max-height: 90vh;
   }
 
   &__title {
@@ -98,26 +103,76 @@ function toggleZoom() {
   }
 
   &__img {
-    width: 100%;
-    height: 80vh;
+    display: block;
+
+    /*
+      Картинка вписывается в экран,
+      сохраняя пропорции
+    */
+    max-width: 75vw;
+    max-height: 75vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
     cursor: zoom-in;
+
+    transition: transform 0.25s ease;
+    transform-origin: center center;
 
     &.zoom {
       transform: scale(1.4);
       cursor: zoom-out;
-      z-index: 100;
     }
   }
 
   &__arrow {
+    flex-shrink: 0;
     cursor: pointer;
     width: 30px;
 
     &.left {
       transform: rotate(-90deg);
     }
+
     &.right {
       transform: rotate(90deg);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .picture {
+    &__content {
+      margin: 0 15px;
+    }
+
+    &__img-wrapper {
+      max-width: calc(100vw - 100px);
+      max-height: 85vh;
+    }
+
+    &__img {
+      max-width: calc(100vw - 100px);
+      max-height: 70vh;
+
+      &.zoom {
+        transform: scale(1.35);
+      }
+    }
+
+    &__arrow {
+      width: 22px;
+    }
+
+    &__title {
+      font-size: 1.1rem;
+    }
+
+    &__description {
+      font-size: 0.85rem;
     }
   }
 }

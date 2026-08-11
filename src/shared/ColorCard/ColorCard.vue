@@ -16,8 +16,8 @@ defineProps<Props>();
 
 <style scoped lang="scss">
 .card {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   cursor: pointer;
 
   &:hover {
