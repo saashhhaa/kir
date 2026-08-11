@@ -1,22 +1,34 @@
 <script lang="ts" setup>
 import { computed } from "vue";
-import { pictures } from "../data/picturesDB";
+import { getPictures } from "../api/pictures";
 import { PictureCard } from "../shared";
 import { useYearsStore } from "../stores/years.ts";
 import HashTagBar from "./HashTagBar.vue";
 import { useHashTagsStore } from "../stores/hashtags.ts";
+import { ref } from "vue";
+import { onMounted } from "vue";
+import { type Picture } from "../types/picture.ts";
+const pictures = ref<Picture[]>([]);
+onMounted(async () => {
+  pictures.value = await getPictures();
+});
 
 const yearsStore = useYearsStore()
 const hashTagsStore = useHashTagsStore()
 
-const filteredPictures = computed(()=>{
-  if(hashTagsStore.currentHash !==null ){
-  return pictures.filter((pic) => (pic.year === yearsStore.currentYear && pic.hashtag === hashTagsStore.currentHash))
-} else {
-  return pictures.filter((pic) => pic.year === yearsStore.currentYear)
+const filteredPictures = computed(() => {
+  if (hashTagsStore.currentHash !== null) {
+    return pictures.value.filter(
+      (pic) =>
+        pic.year === yearsStore.currentYear &&
+        pic.hashtag === hashTagsStore.currentHash
+    )
+  }
 
-}
-})
+  return pictures.value.filter(
+    (pic) => pic.year === yearsStore.currentYear
+  );
+});
 
 
 </script>
@@ -30,7 +42,7 @@ const filteredPictures = computed(()=>{
       v-if="filteredPictures.length !==0"
         v-for="pic in filteredPictures"
         :title="pic.title"
-        :img="pic.img"
+        :img="pic.image_url"
         :id="pic.id"
       />
       <p v-else class="feed__oops">૮₍ᵔ⤙ᵔ ₎ა</p>
