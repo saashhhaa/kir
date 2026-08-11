@@ -5,6 +5,8 @@ import profile_img from '../assets/images/personal/profile.png'
 
 export const profile = {
     NICKNAME: "Кир",
-    DESCRIPTION: "(( _ _ ))..zzzZ \n [] <- ебейшая кириешка",
+    DESCRIPTION: "(( _ _ ))..zzzZ",
     IMAGE: profile_img
 }
+
+//  \n [] <- ебейшая кириешка

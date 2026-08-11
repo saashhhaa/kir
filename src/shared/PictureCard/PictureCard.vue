@@ -11,7 +11,14 @@ defineProps<Props>();
 
 <template>
   <div class="card">
-    <img :src="img" alt="" class="card__img" />
+    <!-- <img :src="img" alt="" class="card__img" /> -->
+     <img
+  :src="img"
+  :alt="title"
+  class="card__img"
+  loading="lazy"
+  decoding="async"
+/>
     <div class="card__overlay">
       {{ title }}
     </div>
@@ -35,7 +42,7 @@ defineProps<Props>();
   &__img {
     width:100%;
     display: block;
-    pointer-events: none;
+    // pointer-events: none;
   }
 
   &:hover {

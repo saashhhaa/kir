@@ -41,7 +41,7 @@ function handleImageClick() {
       </div>
 
       <div :class="{'goDown': admin.isAdminLogged }" class="playlist">
-        <p class="playlist__title">‎¸.•´*¨`*‎♫⋆｡♪ ₊˚♬ ﾟ.๋ ⭑•*`¨*`•.¸</p>
+        <!-- <p class="playlist__title">‎¸.•´*¨`*‎♫⋆｡♪ ₊˚♬ ﾟ.๋ ⭑•*`¨*`•.¸</p> -->
         <EntityAudioPlayer v-for="track in tracks" :key="track.src" v-bind="track" />
       </div>
 </template>

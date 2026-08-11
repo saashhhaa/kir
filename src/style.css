@@ -1,6 +1,11 @@
+
+
 :root {
   /* accent */
   --accent-color: rgb(175, 195, 199);
+  /* --accent-color: rgb(199, 175, 192); */
+  /* --accent-color: rgb(171, 193, 177); */
+  /* --accent-color: rgb(214, 214, 171); */
 
   /* text */
   --main-text: black;
@@ -11,7 +16,7 @@
 
   /* background */
   --profile-back: black;
-  --feed-back: rgb(175, 195, 199);
+  --feed-back: var( --accent-color);
   --modal-back: white;
 
   /* border */

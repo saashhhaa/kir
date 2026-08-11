@@ -1,0 +1,1 @@
+export {default as EntityPicture} from './EntityPicture.vue'

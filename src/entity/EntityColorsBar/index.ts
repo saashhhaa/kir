@@ -1,0 +1,1 @@
+export {default as EntityColorsBar} from './EntityColorsBar.vue'
