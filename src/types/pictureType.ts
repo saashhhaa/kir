@@ -1,3 +1,5 @@
+import type { Track } from "./trackType";
+
 export interface Picture {
   id: string;
   title: string;
@@ -6,4 +8,6 @@ export interface Picture {
   year: number;
   hashtag_id: number | null;
   created_at: string;
+  track_id: number | null;
+   track: Track | null;
 }

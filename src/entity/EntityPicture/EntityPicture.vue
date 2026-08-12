@@ -1,11 +1,13 @@
 <script setup lang="ts">
-// import { EntityAudioPlayer } from '../EntityAudioPlayer';
+import { EntityAudioPlayer } from '../EntityAudioPlayer';
 import { ref } from "vue";
+import type { Track } from "../../types/trackType";
 
 interface Props {
   title?: string;
   description?: string;
   img: string;
+  track?: Track | null;
 }
 
 const props = defineProps<Props>();
@@ -20,6 +22,7 @@ const isZoomed = ref(false);
 function toggleZoom() {
   isZoomed.value = !isZoomed.value;
 }
+
 </script>
 
 <template>
@@ -42,7 +45,12 @@ function toggleZoom() {
           alt=""
         />
         <p v-if="description" class="picture__description">{{ description }}</p>
-        <!-- <EntityAudioPlayer /> -->
+        <EntityAudioPlayer
+          v-if="track"
+          :src="track.file_path"
+          :title="track.title"
+          :artist="track.artist"
+        />
       </div>
       <img
         @click.stop
@@ -78,6 +86,7 @@ function toggleZoom() {
   }
 
   &__img-wrapper {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -87,6 +96,7 @@ function toggleZoom() {
     position: relative;
 
     max-width: 80vw;
+
     max-height: 90vh;
   }
 
@@ -95,9 +105,11 @@ function toggleZoom() {
     color: var(--main-text-inverse);
   }
 
-  &__description {
-    color: var(--secondary-light-text);
-  }
+&__description {
+  color: var(--secondary-light-text);
+  // max-width: 50vw;
+  font-size: .9rem;
+}
 
   &__img {
     display: block;

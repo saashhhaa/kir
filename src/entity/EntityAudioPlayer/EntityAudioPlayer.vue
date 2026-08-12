@@ -60,6 +60,11 @@ function formatTime(sec: number): string {
   return `${m}:${s.toString().padStart(2, '0')}`;
 }
 
+function onError(e: Event) {
+  const el = e.target as HTMLAudioElement;
+  console.error('Audio error', el.error, props.src);
+}
+
 onUnmounted(() => {
   if (audio.value) unregister(audio.value);
 });
@@ -68,14 +73,16 @@ onUnmounted(() => {
 <template>
   <div class="player">
     <audio
+     preload="metadata"
       ref="audio"
       :src="src"
       @timeupdate="onTimeUpdate"
       @loadedmetadata="onLoadedMetadata"
       @ended="onEnded"
+      @error="onError"
       @play="onPlay"
       @pause="onPause"
-    />
+    ></audio>
 
     <div class="player__info">
       <div class="player__title">{{ title }}</div>
@@ -108,10 +115,22 @@ onUnmounted(() => {
   gap: 16px;
   padding: 12px 16px;
 
+   &__toggle {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+  }
+
   &__icon {
     cursor: pointer;
     width: 15px;
     opacity: .6;
+    background: transparent;
 
       &:hover {
       opacity: 1;
@@ -126,6 +145,7 @@ onUnmounted(() => {
   &__title {
     font-size: 0.9rem;
     font-weight: 500;
+    color: var(--main-text-inverse);
   }
 
   &__artist {

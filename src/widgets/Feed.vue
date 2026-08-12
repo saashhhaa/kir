@@ -77,7 +77,7 @@ function prevPicture() {
     :title="selectedPicture.title || ''"
     :description="selectedPicture.description ?? ''"
     :img="selectedPicture.image_url"
-   
+    :track="selectedPicture.track || null"
     @close="closePicture"
     @prev="prevPicture"
     @next="nextPicture"

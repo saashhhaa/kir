@@ -15,9 +15,7 @@ async function fetchHashtags () {
   if(hashtags.value.length >0 ){
      currentHashId.value = hashtags.value[0]!.id
   }
- 
 }
-
   return {
     hashtags,
     currentHashId,

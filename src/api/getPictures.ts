@@ -1,17 +1,38 @@
 import { supabase } from "../lib/supabase";
+import type { Picture } from "../types/pictureType";
+import { getTrackUrl } from "../utils/audio";
 
-export async function getPictures() {
+export async function getPictures(): Promise<Picture[]> {
   const { data, error } = await supabase
     .from("pictures")
-    .select("*")
+    .select(`
+      *,
+      track:tracks (
+        id,
+        title,
+        artist,
+        file_path
+      )
+    `)
     .order("created_at", { ascending: false });
 
   if (error) {
-    throw error;
+    console.error(error);
+    return [];
   }
-
-  return data;
+console.log("PICTURES FROM SUPABASE:", data);
+  return data.map((picture) => ({
+    ...picture,
+    track: picture.track
+      ? {
+          ...picture.track,
+          file_path: getTrackUrl(picture.track.file_path),
+        }
+      : null,
+  }));
+  
 }
+
 
 export function getPreviewUrl(imageUrl: string) {
   const url = new URL(imageUrl);

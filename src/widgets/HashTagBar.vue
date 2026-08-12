@@ -7,7 +7,6 @@ const hashTagStore = useHashTagsStore();
 
 onMounted(()=>{
   hashTagStore.fetchHashtags()
-  console.log("hashtags:", hashTagStore.hashtags);
 })
 
 function handleClick(id: number) {
