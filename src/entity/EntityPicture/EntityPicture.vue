@@ -26,9 +26,10 @@ function toggleZoom() {
 </script>
 
 <template>
-  <div class="picture">
+  <div class="picture" :class="{ 'picture--zoomed': isZoomed }">
     <div class="picture__content" @click="emit('close')">
       <img
+        :class="{ 'hidden': isZoomed }"
         @click.stop
         src="@/assets/images/picture_profile/hand.svg"
         alt=""
@@ -41,11 +42,12 @@ function toggleZoom() {
           @click="toggleZoom"
           :src="img"
           class="picture__img"
-          :class="{ zoom: isZoomed }"
+          :class="{ 'zoom': isZoomed }"
           alt=""
         />
         <p v-if="description" class="picture__description">{{ description }}</p>
         <EntityAudioPlayer
+        :class="{ 'hidden': isZoomed }"
           v-if="track"
           :src="track.file_path"
           :title="track.title"
@@ -53,6 +55,7 @@ function toggleZoom() {
         />
       </div>
       <img
+        :class="{ 'hidden': isZoomed }"
         @click.stop
         src="@/assets/images/picture_profile/hand.svg"
         alt=""
@@ -64,6 +67,9 @@ function toggleZoom() {
 </template>
 
 <style scoped lang="scss">
+.hidden {
+  opacity: 0;
+}
 .picture {
   width: 100vw;
   height: 100vh;
@@ -75,6 +81,11 @@ function toggleZoom() {
   z-index: 100;
   background-color: rgba(0, 0, 0, 0.842);
   overflow: hidden;
+
+   &--zoomed {
+    backdrop-filter: blur(20px);
+  }
+
 
   &__content {
     margin: 0 5vw;
@@ -130,6 +141,8 @@ function toggleZoom() {
     &.zoom {
       transform: scale(1.4);
       cursor: zoom-out;
+      backdrop-filter: blur(20px);
+      background-color: aqua;
     }
   }
 
