@@ -1,42 +1,21 @@
 <script lang="ts" setup>
-import { ref } from "vue";
 import YearsBar from "./YearsBar.vue";
-import { EntityLogin, EntityProfile, EntityLogout } from "../entity/index.ts";
-import { useAdminStore } from "../stores/admin.ts";
+import {  EntityProfile } from "../entity/index.ts";
 import EntityColorsBar from "../entity/EntityColorsBar/EntityColorsBar.vue";
 
-const admin = useAdminStore();
-const isLoginFormVisible = ref(false);
 
-const openLogin = () => {
-  if (admin.isAdminLogged) return;
-  isLoginFormVisible.value = true;
-};
-
-const logOut = () => {
-  admin.logout();
-  isLoginFormVisible.value = false;
-};
-const closeLogin = () => {
-  isLoginFormVisible.value = false;
-};
 </script>
 
 <template>
   <div class="profile">
     <div class="profile__main">
-      <EntityLogout @click="logOut" v-if="admin.isAdminLogged" />
-      <EntityProfile @open-login="openLogin" />
+      <EntityProfile />
     </div>
     <div class="profile__flex">
       <YearsBar />
       <EntityColorsBar />
     </div>
 
-    <EntityLogin
-      v-if="isLoginFormVisible && !admin.isAdminLogged"
-      @close="closeLogin"
-    />
   </div>
 </template>
 

@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { profile } from '../../data/profile';
 import { tracks } from '../../data/tracks';
-import { useAdminStore } from '../../stores/admin';
 import { EntityAudioPlayer } from '../EntityAudioPlayer';
 
-const admin = useAdminStore();
 
 const emit = defineEmits<{
   openLogin: [];
@@ -40,7 +38,7 @@ function handleImageClick() {
         </div>
       </div>
 
-      <div :class="{'goDown': admin.isAdminLogged }" class="playlist">
+      <div class="playlist">
         <!-- <p class="playlist__title">‎¸.•´*¨`*‎♫⋆｡♪ ₊˚♬ ﾟ.๋ ⭑•*`¨*`•.¸</p> -->
         <EntityAudioPlayer v-for="track in tracks" :key="track.src" v-bind="track" />
       </div>
@@ -108,10 +106,6 @@ function handleImageClick() {
     padding: 10px;
   }
  
-
-  &.goDown {
-    margin-top: 7vh;
-  }
 }
 
 
