@@ -34,13 +34,13 @@ function toggleZoom() {
       />
       <div @click.stop class="picture__img-wrapper">
         <h2 v-if="title" class="picture__title">{{ title }}</h2>
-          <img
-            @click="toggleZoom"
-            :src="img"
-            class="picture__img"
-            :class="{ zoom: isZoomed }"
-            alt=""
-          />
+        <img
+          @click="toggleZoom"
+          :src="img"
+          class="picture__img"
+          :class="{ zoom: isZoomed }"
+          alt=""
+        />
         <p v-if="description" class="picture__description">{{ description }}</p>
         <!-- <EntityAudioPlayer /> -->
       </div>
@@ -86,9 +86,6 @@ function toggleZoom() {
     text-align: center;
     position: relative;
 
-    /*
-      Ограничиваем область, в которой может находиться картинка
-    */
     max-width: 80vw;
     max-height: 90vh;
   }
@@ -104,11 +101,7 @@ function toggleZoom() {
 
   &__img {
     display: block;
-
-    /*
-      Картинка вписывается в экран,
-      сохраняя пропорции
-    */
+    z-index: 1000;
     max-width: 75vw;
     max-height: 75vh;
 

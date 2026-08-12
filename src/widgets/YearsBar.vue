@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 
 import YearCard from '../shared/YearCard/YearCard.vue';
-import { useYearsStore } from '../stores/years.ts';
+import { useYearsStore } from '../stores/yearsStore.ts';
 
 
 const yearsStore = useYearsStore()

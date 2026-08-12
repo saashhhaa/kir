@@ -4,6 +4,6 @@ export interface Picture {
   description?: string | null;
   image_url: string;
   year: number;
-  hashtag: string | null;
+  hashtag_id: number | null;
   created_at: string;
 }

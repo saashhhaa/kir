@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import { computed } from "vue";
-import { getPictures, getPreviewUrl } from "../api/pictures";
+import { getPictures, getPreviewUrl } from "../api/getPictures.ts";
 import { PictureCard } from "../shared";
-import { useYearsStore } from "../stores/years.ts";
+import { useYearsStore } from "../stores/yearsStore.ts";
 import HashTagBar from "./HashTagBar.vue";
-import { useHashTagsStore } from "../stores/hashtags.ts";
+import { useHashTagsStore } from "../stores/hashtagsStore.ts";
 import { ref } from "vue";
 import { onMounted } from "vue";
-import { type Picture } from "../types/picture.ts";
+import { type Picture } from "../types/pictureType.ts";
 import { EntityPicture } from "../entity/index.ts";
 const pictures = ref<Picture[]>([]);
 onMounted(async () => {
@@ -18,11 +18,11 @@ const yearsStore = useYearsStore();
 const hashTagsStore = useHashTagsStore();
 
 const filteredPictures = computed(() => {
-  if (hashTagsStore.currentHash !== null) {
+  if (hashTagsStore.currentHashId !== null) {
     return pictures.value.filter(
       (pic) =>
         pic.year === yearsStore.currentYear &&
-        pic.hashtag === hashTagsStore.currentHash,
+        pic.hashtag_id === hashTagsStore.currentHashId,
     );
   }
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ColorCard } from '../../shared';
-import { useThemeStore } from '../../stores/theme';
+import { useThemeStore } from '../../stores/themeStore';
 
 const themeStore = useThemeStore()
 

@@ -1,8 +1,7 @@
 <script setup lang="ts">
 
 interface Props {
-//   tag: string;
-  title: string;
+  code: string;
   isSelected: boolean
 }
 
@@ -12,7 +11,7 @@ defineProps<Props>();
 <template>
   <div :class="{'active': isSelected}" class="tag">
     <img src="@/assets/images/hashtag/hashtag.svg" alt="" class="tag__img">
-    <p class="tag__title">{{ title }}</p>
+    <p class="tag__code">{{ code }}</p>
    </div>
 </template>
 
@@ -34,7 +33,7 @@ defineProps<Props>();
 
  }
 
- &__title {
+ &__code {
     font-size: 0.9rem;
  }
  &:hover {

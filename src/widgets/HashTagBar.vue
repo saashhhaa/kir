@@ -1,28 +1,32 @@
 <script lang="ts" setup>
-import { hashtags } from "../data/hashtags";
+import { onMounted } from "vue";
 import { HashTag } from "../shared";
-import { useHashTagsStore } from "../stores/hashtags";
+import { useHashTagsStore } from "../stores/hashtagsStore";
 
 const hashTagStore = useHashTagsStore();
-function handleClick(hash: string | null) {
-  if(hashTagStore.currentHash !== null && hashTagStore.currentHash!==hash){
-     hashTagStore.setCurrHash(hash);
-  }
-  else if (hashTagStore.currentHash == null) {
-    hashTagStore.setCurrHash(hash);
-  } else {
+
+onMounted(()=>{
+  hashTagStore.fetchHashtags()
+  console.log("hashtags:", hashTagStore.hashtags);
+})
+
+function handleClick(id: number) {
+  if (hashTagStore.currentHashId === id) {
     hashTagStore.setCurrHash(null);
+  } else {
+    hashTagStore.setCurrHash(id);
   }
 }
 </script>
 
 <template>
-  <div class="bar">
+    <div class="bar">
     <HashTag
-      @click="handleClick(hash)"
-      v-for="hash in hashtags"
-      :is-selected="hashTagStore.currentHash == hash && true"
-      :title="hash"
+      v-for="hash in hashTagStore.hashtags"
+      :key="hash.id"
+      :is-selected="hashTagStore.currentHashId === hash.id"
+      :code="hash.code"
+      @click="handleClick(hash.id)"
     />
   </div>
 </template>
