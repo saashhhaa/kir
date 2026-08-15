@@ -1,7 +1,7 @@
 <script lang="ts" setup>
+import EntityColorsBar from "../entity/EntityColorsBar.vue";
+import EntityProfile from "../entity/EntityProfile.vue";
 import YearsBar from "./YearsBar.vue";
-import {  EntityProfile } from "../entity/index.ts";
-import EntityColorsBar from "../entity/EntityColorsBar/EntityColorsBar.vue";
 
 
 </script>

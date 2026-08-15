@@ -1,13 +1,10 @@
 <script lang="ts" setup>
-import { onMounted } from "vue";
-import { HashTag } from "../shared";
+import { hashtags } from "../data/hashtags";
+import HashTag from "../shared/HashTag.vue";
 import { useHashTagsStore } from "../stores/hashtagsStore";
 
 const hashTagStore = useHashTagsStore();
 
-onMounted(()=>{
-  hashTagStore.fetchHashtags()
-})
 
 function handleClick(id: number) {
   if (hashTagStore.currentHashId === id) {
@@ -21,7 +18,7 @@ function handleClick(id: number) {
 <template>
     <div class="bar">
     <HashTag
-      v-for="hash in hashTagStore.hashtags"
+      v-for="hash in hashtags"
       :key="hash.id"
       :is-selected="hashTagStore.currentHashId === hash.id"
       :code="hash.code"

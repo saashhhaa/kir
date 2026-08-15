@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 
-import YearCard from '../shared/YearCard/YearCard.vue';
+import YearCard from '../shared/YearCard.vue';
 import { useYearsStore } from '../stores/yearsStore.ts';
 
 

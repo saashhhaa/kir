@@ -1,14 +1,65 @@
-// import audio1 from '../assets/audio/Урал Гайсин - Священная война.mp3'
-// import audio2 from '../assets/audio/Akira_Yamaoka_-_Love_Psalm_(SkySound7.com).mp3'
-// import audio3 from '../assets/audio/Egor_i_Opizdenevshie_-_ZHeka_uzhe_v_Gamburge_(SkySound7.com).mp3'
-import audio4 from '../assets/audio/Порез На Собаке - Теперь Мы Снова Вдвоём.mp3'
+import type { Track } from "../types/trackType";
+import { getAudio } from "./assets";
+import audio_1 from "../assets/audio/Порез На Собаке - Теперь Мы Снова Вдвоём.mp3";
 
 export const tracks = [
-  // { src: audio1, title: 'священная война', artist: 'урал гайсин' },
-  // { src: audio2, title: 'love psalm', artist: 'akira yamaoka' },
-  // { src: audio3, title: 'жека уже в гамбурге', artist: 'гроб' },
-  { src: audio4, title: 'теперь мы снова вдвоем', artist: 'порез на собаке' },
-  { src: audio4, title: 'теперь мы снова вдвоем', artist: 'порез на собаке' },
-  { src: audio4, title: 'теперь мы снова вдвоем', artist: 'порез на собаке' },
-
+  {
+    src: audio_1,
+    title: "теперь мы снова вдвоем",
+    artist: "порез на собаке",
+  },
+  {
+    src: audio_1,
+    title: "теперь мы снова вдвоем",
+    artist: "порез на собаке",
+  },
+  {
+    src: audio_1,
+    title: "теперь мы снова вдвоем",
+    artist: "порез на собаке",
+  },
 ];
+
+export const audio: Track[] = [
+  {
+    id: 1,
+    title: "безмятежность",
+    artist: "шизоняшка",
+    file_path:  getAudio('26/шизоняшка - безмятежность.mp3'),
+  },
+  {
+    id: 2,
+    title: "солдаты",
+    artist: "4 пореза на птице",
+    file_path: getAudio('26/4_Pozicii_Bruno_-_Soldaty_(SkySound7.com) 2.mp3'),
+  },
+  {
+    id: 3,
+    title: "стервенею",
+    artist: "янка",
+    file_path: getAudio('26/ya_sterveneyu.mp3'),
+  },
+  {
+    id: 4,
+    title: "i love my boyfriend",
+    artist: "princess chelsea",
+    file_path: getAudio('26/Princess Chelsea - I Love My Boyfriend.mp3'),
+  },
+  {
+    id: 5,
+    title: "звезды на плечах",
+    artist: "хадн дадн",
+    file_path: getAudio('26/Хадн дадн - Звёзды на плечах.mp3'),
+  },
+   {
+    id: 6,
+    title: "the black cap brotherhood theme",
+    artist: "tomas dvorak",
+    file_path: getAudio('26/Tom_Dvo_k_Machinarium_Soundtrack_2010_The_Black_Brotherhood_Theme.mp3'),
+  },
+];
+
+// C:\Users\HomePC\Desktop\kir\public\audio\26\
+// C:\Users\HomePC\Desktop\kir\public\audio\26\
+// C:\Users\HomePC\Desktop\kir\public\audio\26\
+// C:\Users\HomePC\Desktop\kir\public\audio\26\

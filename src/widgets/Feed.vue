@@ -1,39 +1,44 @@
 <script lang="ts" setup>
 import { computed } from "vue";
-import { getPictures, getPreviewUrl } from "../api/getPictures.ts";
-import { PictureCard } from "../shared";
+import PictureCard from "../shared/PictureCard.vue";
 import { useYearsStore } from "../stores/yearsStore.ts";
 import HashTagBar from "./HashTagBar.vue";
 import { useHashTagsStore } from "../stores/hashtagsStore.ts";
 import { ref } from "vue";
-import { onMounted } from "vue";
-import { type Picture } from "../types/pictureType.ts";
-import { EntityPicture } from "../entity/index.ts";
-const pictures = ref<Picture[]>([]);
-onMounted(async () => {
-  pictures.value = await getPictures();
-});
+import EntityPicture from "../entity/EntityPicture.vue";
+import { pictures } from "../data/pictures.ts";
+import { audio } from "../data/tracks.ts";
 
 const yearsStore = useYearsStore();
 const hashTagsStore = useHashTagsStore();
 
 const filteredPictures = computed(() => {
-  if (hashTagsStore.currentHashId !== null) {
-    return pictures.value.filter(
+  if (hashTagsStore.currentHashId === null) {
+    return pictures.filter((pic) => pic.year === yearsStore.currentYear);
+  } else {
+    return pictures.filter(
       (pic) =>
         pic.year === yearsStore.currentYear &&
         pic.hashtag_id === hashTagsStore.currentHashId,
     );
   }
-
-  return pictures.value.filter((pic) => pic.year === yearsStore.currentYear);
 });
 
 const selectedIndex = ref<number | null>(null);
 
-const selectedPicture = computed(() =>
-  selectedIndex.value !== null ? filteredPictures.value[selectedIndex.value] : null
-);
+const selectedPicture = computed(() => {
+  if (selectedIndex.value === null) return null;
+
+  return filteredPictures.value[selectedIndex.value];
+});
+
+const selectedTrack = computed(() => {
+  if (!selectedPicture.value?.track_id) return null;
+
+  return audio.find(
+    (track) => track.id === selectedPicture.value?.track_id
+  ) ?? null;
+});
 
 function openPicture(index: number) {
   selectedIndex.value = index;
@@ -65,9 +70,8 @@ function prevPicture() {
         v-for="(pic, index) in filteredPictures"
         :key="index"
         :title="pic.title || ''"
-        :img="getPreviewUrl(pic.image_url)"
-        :id="pic.id"
-         @click="openPicture(index)"
+        :img="pic.image_url"
+        @click="openPicture(index)"
       />
       <p v-else class="feed__oops">૮₍ᵔ⤙ᵔ ₎ა</p>
     </div>
@@ -77,12 +81,11 @@ function prevPicture() {
     :title="selectedPicture.title || ''"
     :description="selectedPicture.description ?? ''"
     :img="selectedPicture.image_url"
-    :track="selectedPicture.track || null"
+    :track="selectedTrack"
     @close="closePicture"
     @prev="prevPicture"
     @next="nextPicture"
   />
-
 </template>
 
 <style lang="scss">
