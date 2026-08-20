@@ -97,11 +97,11 @@ function handleImageClick() {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    aspect-ratio: 1;
+    aspect-ratio: 1/1;
     border: var(--light-border);
         cursor: help;
     width: clamp(100px, 15vw, 400px);
-
+    height: auto;
     &:hover {
       filter: brightness(0.7);
     }
@@ -127,13 +127,17 @@ function handleImageClick() {
 @media (max-width: 800px) {
   .playlist {
     width: 100%;
-    // max-height: clamp(60px, 13vh, 13vh);
     overflow: hidden;
     margin-bottom: 5vh;
 
      &__title {
     display: none;
   }
+  }
+  .profile {
+    &__image {
+      width: 40vw;
+    }
   }
 }
 </style>

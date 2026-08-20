@@ -5,5 +5,4 @@ export const accentColors = [
   "rgb(214, 214, 171)",
   "rgb(80, 76, 95)",
   "rgb(62, 62, 62)",
-  "rgb(81, 31, 31)",
 ];
