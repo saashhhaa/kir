@@ -3,7 +3,6 @@
 import YearCard from '../shared/YearCard.vue';
 import { useYearsStore } from '../stores/yearsStore.ts';
 
-
 const yearsStore = useYearsStore()
 
 function handleYearClick(year: number) {

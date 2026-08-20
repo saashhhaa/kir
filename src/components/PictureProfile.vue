@@ -30,7 +30,7 @@ function toggleZoom() {
       <img
         :class="{ hidden: isZoomed }"
         @click.stop
-        src="@/assets/images/picture_profile/hand.svg"
+        src="@/assets/images/hand.svg"
         alt=""
         class="picture__arrow left"
         @click="emit('prev')"
@@ -56,7 +56,7 @@ function toggleZoom() {
       <img
         :class="{ hidden: isZoomed }"
         @click.stop
-        src="@/assets/images/picture_profile/hand.svg"
+        src="@/assets/images/hand.svg"
         alt=""
         class="picture__arrow right"
         @click="emit('next')"

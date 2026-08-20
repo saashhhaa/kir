@@ -3,6 +3,172 @@ import { getImage } from "./assets";
 
 export const pictures: Picture[] = [
   {
+    title: "#1",
+    description: "===°~",
+    image_url: getImage("25/collection_cigarets/1.png"),
+    collection_id: 1,
+  },
+  {
+    title: "#2",
+    description: "===°~",
+    image_url: getImage("25/collection_cigarets/2.png"),
+    collection_id: 1,
+  },
+  {
+    title: "#1",
+    description: "===°~",
+    image_url: getImage("25/collection_cigarets/бесконечность1.png"),
+    collection_id: 1,
+  },
+  {
+    title: "#3",
+    description: "===°~",
+    image_url: getImage("25/collection_cigarets/помада3.png"),
+    collection_id: 1,
+  },
+  {
+    title: "#4",
+    description: "===°~",
+    image_url: getImage("25/collection_cigarets/пепельница4.png"),
+    collection_id: 1,
+  },
+  {
+    title: "#5",
+    description: "===°~",
+    image_url: getImage("25/collection_cigarets/руки5.png"),
+    collection_id: 1,
+  },
+  {
+    title: "#6",
+    description: "===°~",
+    image_url: getImage("25/collection_cigarets/конфорка6.png"),
+    collection_id: 1,
+  },
+  {
+    title: "#7",
+    description: "===°~",
+    image_url: getImage("25/collection_cigarets/всевсигаретах7.png"),
+    collection_id: 1,
+  },
+  {
+    title: "#8",
+    description: "===°~",
+    image_url: getImage("25/collection_cigarets/вместе8.png"),
+    collection_id: 1,
+  },
+       {
+    title: "#9",
+     description:'===°~',
+    image_url: getImage("25/collection_cigarets/заболевания9.png"),
+    collection_id: 1,
+  },
+    {
+    title: "#10",
+     description:'===°~',
+    image_url: getImage("25/collection_cigarets/рутина10.png"),
+    collection_id: 1,
+  },
+    {
+    title: "#11",
+     description:'===°~',
+    image_url: getImage("25/collection_cigarets/тепло11.png"),
+    collection_id: 1,
+  },
+
+  {
+    title: "happy halloween",
+    image_url: getImage("25/котИТыква.png"),
+    year: 25,
+    hashtag_id: 2,
+  },
+  {
+    title: "набросок нинель №1",
+    image_url: getImage("25/нинель1.png"),
+    year: 25,
+    hashtag_id: 2,
+  },
+  {
+    title: "набросок нинель №2",
+    image_url: getImage("25/нинель2.png"),
+    year: 25,
+    hashtag_id: 2,
+  },
+  {
+    title: "рендал",
+    description: "пеперони",
+    image_url: getImage("25/рендал.png"),
+    year: 25,
+    hashtag_id: 2,
+  },
+  {
+    title: "гостиная",
+    image_url: getImage("25/рыба.png"),
+    year: 25,
+    hashtag_id: 1,
+    track_id: 1, //TODO:
+  },
+  {
+    title: "вот бы справить мне костюм себе из...",
+    description: "сталина",
+    image_url: getImage("25/сталин.png"),
+    year: 25,
+    hashtag_id: 1,
+    track_id: 1, //TODO:
+  },
+  {
+    title: "yume",
+    image_url: getImage("25/yume.png"),
+    year: 25,
+    hashtag_id: 2,
+  },
+
+  {
+    title: "болезненный",
+    description: "я",
+    image_url: getImage("25/flue.png"),
+    year: 25,
+    hashtag_id: 1,
+  },
+  {
+    title: "свобода",
+    description: "я",
+    image_url: getImage("25/freedom.png"),
+    year: 25,
+    hashtag_id: 1,
+    track_id: 1, //TODO:
+  },
+  {
+    title: "зефир",
+    image_url: getImage("25/the_fear.png"),
+    year: 25,
+    hashtag_id: 1, // ????
+  },
+  {
+    image_url: getImage("25/woman.png"),
+    year: 25,
+    hashtag_id: 1,
+  },
+  {
+    title: "влад приденьгах №2",
+    image_url: getImage("25/xarekter1.png"),
+    year: 25,
+    hashtag_id: 3, // ДВОЙНОЙ ХЭШТЕГ
+    track_id: 1, //TODO:
+  },
+  {
+    title: "влад приденьгах №1",
+    image_url: getImage("25/xarakter2.png"),
+    year: 25,
+    hashtag_id: 3, // ДВОЙНОЙ ХЭШТЕГ
+    track_id: 1, //TODO:
+  },
+  {
+    description: "пирокинезис?",
+    image_url: getImage("25/курящий.png"),
+    year: 25,
+    hashtag_id: 1,
+  },
+  {
     title: "инфант №1",
     image_url: getImage("27/infant1.JPG"),
     year: 27,
@@ -16,7 +182,8 @@ export const pictures: Picture[] = [
   },
   {
     title: "салли 🦷 кромсали",
-    description: 'Поздравляю сали сосали с 10и летием. Мне же в этом году исполняется 20.',
+    description:
+      "Поздравляю сали сосали с 10и летием. Мне же в этом году исполняется 20.",
     image_url: getImage("27/сф.png"),
     year: 27,
     hashtag_id: 1,
@@ -40,14 +207,14 @@ export const pictures: Picture[] = [
     image_url: getImage("26/butterfly.webp"),
     year: 26,
     hashtag_id: 1,
-    track_id: 1, 
+    track_id: 1,
   },
   {
     title: "мертвогород",
     image_url: getImage("26/dead_sity.webp"),
     year: 26,
     hashtag_id: 1,
-    track_id: 6
+    track_id: 6,
   },
   {
     title: "джигит",
@@ -60,7 +227,7 @@ export const pictures: Picture[] = [
     image_url: getImage("26/eva.webp"),
     year: 26,
     hashtag_id: 1,
-    track_id: 5
+    track_id: 5,
   },
   {
     title: "кыз",
@@ -108,7 +275,7 @@ export const pictures: Picture[] = [
     image_url: getImage("26/soldiers.webp"),
     year: 26,
     hashtag_id: 1,
-    track_id:2
+    track_id: 2,
   },
   {
     title: "стервенею",
@@ -116,17 +283,17 @@ export const pictures: Picture[] = [
     image_url: getImage("26/sterveney.webp"),
     year: 26,
     hashtag_id: 1,
-    track_id: 3
+    track_id: 3,
   },
-//   НЕУВЕРЕНА
-   {
+  //   НЕУВЕРЕНА
+  {
     title: "помнишь",
     image_url: getImage("26/aibek.webp"),
     year: 26,
     hashtag_id: 1,
-    track_id:4
+    track_id: 4,
   },
-   {
+  {
     title: "достоевский",
     image_url: getImage("26/dostoevsky.webp"),
     year: 26,
@@ -143,7 +310,7 @@ export const pictures: Picture[] = [
     hashtag_id: 2,
   },
   //   НЕУВЕРЕНА
-   {
+  {
     title: "перья",
     image_url: getImage("26/perya.webp"),
     year: 26,

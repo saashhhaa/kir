@@ -11,24 +11,32 @@ import { audio } from "../data/tracks.ts";
 import LoadingPictureCard from "../shared/LoadingPictureCard.vue";
 import type { Picture } from "../types/pictureType.ts";
 import { watch } from "vue";
+import CollectionCard from "../shared/CollectionCard.vue";
+import { collections } from "../data/collections.ts";
 
 const yearsStore = useYearsStore();
 const hashTagsStore = useHashTagsStore();
 
-
 const filteredPictures = computed(() => {
   if (hashTagsStore.currentHashId === null) {
-    return pictures.filter((pic) => pic.year === yearsStore.currentYear);
+    return pictures.filter(
+      (pic) => pic.year === yearsStore.currentYear && !pic.collection_id,
+    );
   } else {
     return pictures.filter(
       (pic) =>
         pic.year === yearsStore.currentYear &&
-        pic.hashtag_id === hashTagsStore.currentHashId,
+        pic.hashtag_id === hashTagsStore.currentHashId &&
+        !pic.collection_id,
     );
   }
 });
 
-const allPicsLoaded = ref(false)
+const filteredCollections = computed(() => {
+  return collections.filter((col) => col.year === yearsStore.currentYear);
+});
+
+const allPicsLoaded = ref(false);
 async function preloadImages(images: Picture[]) {
   allPicsLoaded.value = false;
 
@@ -39,8 +47,7 @@ async function preloadImages(images: Picture[]) {
 
     try {
       await img.decode();
-    } catch {
-    }
+    } catch {}
   });
 
   await Promise.all(promises);
@@ -84,18 +91,30 @@ function prevPicture() {
   selectedIndex.value = (selectedIndex.value - 1 + length) % length;
 }
 
+const emit = defineEmits<{ openCollection: [col_id: number] }>();
+
 watch(
   filteredPictures,
   (pictures) => {
     preloadImages(pictures);
   },
-  { immediate: true }
+  { immediate: true },
 );
 </script>
 
 <template>
   <div class="feed">
-    <HashTagBar />
+    <div class="feed__top">
+      <HashTagBar />
+      <div v-if="filteredCollections.length !== 0" class="feed__container">
+        <CollectionCard
+          v-for="(col, index) in filteredCollections"
+          :title="col.title"
+          :key="index"
+          @click="$emit('openCollection', col.id)"
+        />
+      </div>
+    </div>
     <div v-if="allPicsLoaded" class="feed__grid">
       <PictureCard
         v-if="filteredPictures.length !== 0"
@@ -152,6 +171,20 @@ watch(
     margin: 0 auto;
     opacity: 0.3;
     cursor: help;
+  }
+
+  &__container {
+    width: 100%;
+    justify-content: end;
+    display: flex;
+    padding: 20px;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
   }
 }
 

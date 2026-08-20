@@ -10,7 +10,7 @@ defineProps<Props>();
 
 <template>
   <div :class="{'active': isSelected}" class="tag">
-    <img src="@/assets/images/hashtag/hashtag.svg" alt="" class="tag__img">
+    <img src="@/assets/images/hashtag.svg" alt="" class="tag__img">
     <p class="tag__code">{{ code }}</p>
    </div>
 </template>

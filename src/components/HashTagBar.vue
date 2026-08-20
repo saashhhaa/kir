@@ -33,6 +33,7 @@ function handleClick(id: number) {
   flex-wrap: wrap;
   gap: 10px;
   width: 100%;
+  height: fit-content;
   margin-bottom: 10vh;
 }
 </style>
