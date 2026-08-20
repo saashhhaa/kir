@@ -3,6 +3,25 @@ import { getImage } from "./assets";
 
 export const pictures: Picture[] = [
   {
+    title: "инфант №1",
+    image_url: getImage("27/infant1.JPG"),
+    year: 27,
+    hashtag_id: 2,
+  },
+  {
+    title: "инфант №2",
+    image_url: getImage("27/infant2.JPG"),
+    year: 27,
+    hashtag_id: 2,
+  },
+  {
+    title: "салли 🦷 кромсали",
+    description: 'Поздравляю сали сосали с 10и летием. Мне же в этом году исполняется 20.',
+    image_url: getImage("27/сф.png"),
+    year: 27,
+    hashtag_id: 1,
+  },
+  {
     title: "влад",
     image_url: getImage("26/brat1.webp"),
     year: 26,
