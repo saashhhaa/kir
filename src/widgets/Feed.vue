@@ -107,7 +107,6 @@ watch(
       />
       <p v-else class="feed__oops">૮₍ᵔ⤙ᵔ ₎ა</p>
     </div>
-    <!-- не пустой массив картинок и если картинки езе грууятся -->
     <div v-else class="feed__loading">
       <LoadingPictureCard v-for="_ in 9" />
     </div>

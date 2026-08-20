@@ -1,8 +1,14 @@
 <script setup lang="ts">
+import { useWindowSize } from '@vueuse/core';
 import { profile } from '../data/profile.ts';
 import { tracks } from '../data/tracks.ts';
-import EntityAudioPlayer from './AudioPlayer.vue';
+import AudioPlayer from './AudioPlayer.vue';
+import { computed } from 'vue';
 
+const {width} = useWindowSize()
+const is_mobile = computed(()=>{
+  return width.value<800
+})
 
 const emit = defineEmits<{
   openLogin: [];
@@ -46,8 +52,8 @@ function handleImageClick() {
       </div>
 
       <div class="playlist">
-        <!-- <p class="playlist__title">‎¸.•´*¨`*‎♫⋆｡♪ ₊˚♬ ﾟ.๋ ⭑•*`¨*`•.¸</p> -->
-        <EntityAudioPlayer v-for="track in tracks" :key="track.src" v-bind="track" />
+        <AudioPlayer v-if="!is_mobile" v-for="track in tracks" :key="track.src" v-bind="track" />
+        <AudioPlayer v-else :artist="tracks[0]?.artist" :src="tracks[0]?.src || ''" :title="tracks[0]?.title || ''"/>
       </div>
 </template>
 
@@ -121,7 +127,7 @@ function handleImageClick() {
 @media (max-width: 800px) {
   .playlist {
     width: 100%;
-    max-height: clamp(60px, 13vh, 13vh);
+    // max-height: clamp(60px, 13vh, 13vh);
     overflow: hidden;
     margin-bottom: 5vh;
 
