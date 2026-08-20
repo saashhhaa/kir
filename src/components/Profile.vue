@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { profile } from '../data/profile';
-import { tracks } from '../data/tracks';
-import EntityAudioPlayer from './EntityAudioPlayer.vue';
+import { profile } from '../data/profile.ts';
+import { tracks } from '../data/tracks.ts';
+import EntityAudioPlayer from './AudioPlayer.vue';
 
 
 const emit = defineEmits<{

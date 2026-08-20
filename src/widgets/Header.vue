@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import EntityColorsBar from "../entity/EntityColorsBar.vue";
-import EntityProfile from "../entity/EntityProfile.vue";
-import YearsBar from "./YearsBar.vue";
+import ColorsBar from "../components/ColorsBar.vue";
+import Profile from "../components/Profile.vue";
+import YearsBar from "../components/YearsBar.vue";
 
 
 </script>
@@ -9,11 +9,11 @@ import YearsBar from "./YearsBar.vue";
 <template>
   <div class="profile">
     <div class="profile__main">
-      <EntityProfile />
+      <Profile />
     </div>
     <div class="profile__flex">
       <YearsBar />
-      <EntityColorsBar />
+      <ColorsBar />
     </div>
 
   </div>

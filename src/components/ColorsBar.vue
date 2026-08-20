@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import ColorCard from '../shared/ColorCard.vue';
-import { useThemeStore } from '../stores/themeStore';
+import { useThemeStore } from '../stores/themeStore.ts';
 
 const themeStore = useThemeStore()
 

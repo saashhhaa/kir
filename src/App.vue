@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import Feed from './widgets/Feed.vue';
-import Profile from './widgets/Profile.vue';
+import Header from './widgets/Header.vue';
 
 </script>
 
 <template>
-  <Profile/>
+  <Header/>
   <Feed/>
 </template>
 

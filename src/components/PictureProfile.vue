@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import EntityAudioPlayer from "./EntityAudioPlayer.vue";
+import EntityAudioPlayer from "./AudioPlayer.vue";
 import { ref } from "vue";
-import type { Track } from "../types/trackType";
+import type { Track } from "../types/trackType.ts";
 
 interface Props {
   title?: string;

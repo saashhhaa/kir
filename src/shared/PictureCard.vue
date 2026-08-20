@@ -2,22 +2,22 @@
 interface Props {
   title: string;
   img: string;
-  hashtag? : string;
+  hashtag?: string;
 }
 
-defineProps<Props>();
+const props = defineProps<Props>();
+
+ 
 </script>
 
 <template>
   <div class="card">
-    <!-- <img :src="img" alt="" class="card__img" /> -->
-     <img
-  :src="img"
-  :alt="title"
-  class="card__img"
-  loading="lazy"
-  decoding="async"
-/>
+    <img
+      :src="img"
+      :alt="title"
+      class="card__img"
+      decoding="async"
+    />
     <div class="card__overlay">
       {{ title }}
     </div>
@@ -26,7 +26,7 @@ defineProps<Props>();
 
 <style scoped lang="scss">
 .card {
-   width: fit-content;
+  width: fit-content;
   padding: 2px;
   height: fit-content;
   border: var(--dark-border);
@@ -39,9 +39,8 @@ defineProps<Props>();
   break-inside: avoid;
 
   &__img {
-    width:100%;
+    width: 100%;
     display: block;
-    // pointer-events: none;
   }
 
   &:hover {
@@ -65,7 +64,7 @@ defineProps<Props>();
   }
 }
 
-@media (max-width:800px){
+@media (max-width: 800px) {
   .card {
     &__img {
       width: 40vw;
