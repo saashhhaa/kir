@@ -3,6 +3,91 @@ import { getImage } from "./assets";
 
 export const pictures: Picture[] = [
   {
+    title: "стул, штаны, ремень",
+    image_url: getImage("24/collection_child/стул, штаны, ремень.png"),
+    collection_id: 3,
+  },
+  {
+    title: "не надо",
+    image_url: getImage("24/collection_child/не надо, пожалуйста.png"),
+    collection_id: 3,
+  },
+  {
+    title: "тюрьма",
+    image_url: getImage("24/collection_child/тюрьма.png"),
+    collection_id: 3,
+  },
+  {
+    title: "так он станет добрее?",
+    image_url: getImage("24/collection_child/так он станет добрым.png"),
+    collection_id: 3,
+  },
+   {
+    title: "почему же ты не помог",
+    image_url: getImage("24/collection_child/почему же ты не помог.png"),
+    collection_id: 3,
+  },
+   {
+    title: "я грязная",
+    image_url: getImage("24/collection_child/я грязная.png"),
+    collection_id: 3,
+  },
+  {
+    title: "маршрут",
+    image_url: getImage("24/collection_child/маршрут.png"),
+    collection_id: 3,
+  },
+  {
+    title: "больно",
+    image_url: getImage("24/collection_child/больно.png"),
+    collection_id: 3,
+  },
+  {
+    title: "не двинуться",
+    image_url: getImage("24/collection_green/сложно подвинуться.png"),
+    collection_id: 2,
+  },
+  {
+    title: "почему мне",
+    image_url: getImage("24/collection_green/почему я.png"),
+    collection_id: 2,
+  },
+  {
+    title: "нарцисс",
+    image_url: getImage("24/collection_green/нарцисс.png"),
+    collection_id: 2,
+  },
+  {
+    title: "не лезет",
+    image_url: getImage("24/collection_green/через край.png"),
+    collection_id: 2,
+  },
+  {
+    title: "смотрят",
+    image_url: getImage("24/collection_green/наблюдают.png"),
+    collection_id: 2,
+  },
+  {
+    title: "акцент",
+    image_url: getImage("24/collection_sheeps/sheep1.png"),
+    collection_id: 4,
+  },
+  {
+    title: "нюанс",
+    image_url: getImage("24/collection_sheeps/sheep2.png"),
+    collection_id: 4,
+  },
+  {
+    title: "динамика",
+    image_url: getImage("24/collection_sheeps/sheep3.png"),
+    collection_id: 4,
+  },
+  {
+    title: "контраст",
+    image_url: getImage("24/collection_sheeps/sheep4.png"),
+    collection_id: 4,
+  },
+  {
     title: "#1",
     description: "===°~",
     image_url: getImage("25/collection_cigarets/1.png"),
@@ -56,21 +141,21 @@ export const pictures: Picture[] = [
     image_url: getImage("25/collection_cigarets/вместе8.png"),
     collection_id: 1,
   },
-       {
+  {
     title: "#9",
-     description:'===°~',
+    description: "===°~",
     image_url: getImage("25/collection_cigarets/заболевания9.png"),
     collection_id: 1,
   },
-    {
+  {
     title: "#10",
-     description:'===°~',
+    description: "===°~",
     image_url: getImage("25/collection_cigarets/рутина10.png"),
     collection_id: 1,
   },
-    {
+  {
     title: "#11",
-     description:'===°~',
+    description: "===°~",
     image_url: getImage("25/collection_cigarets/тепло11.png"),
     collection_id: 1,
   },

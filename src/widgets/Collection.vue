@@ -2,14 +2,12 @@
 import { pictures } from "../data/pictures";
 import BackButton from "../shared/BackButton.vue";
 import PictureCard from "../shared/PictureCard.vue";
-interface Props {
-  collection_id: number | null;
-}
+import { useCollectionsStore } from "../stores/colStore.ts";
 
-const props = defineProps<Props>();
+const collectionsStore = useCollectionsStore()
 
 const filteredPictures = pictures.filter(
-  (pic) => pic.collection_id === props.collection_id,
+  (pic) => pic.collection_id === collectionsStore.openedCollectionId,
 );
 
 
@@ -17,7 +15,7 @@ const filteredPictures = pictures.filter(
 
 <template>
   <div class="collection">
-    <BackButton/>
+    <BackButton variant="close_collection"/>
     <div class="collection__grid">
       <PictureCard
         v-if="filteredPictures.length !== 0"

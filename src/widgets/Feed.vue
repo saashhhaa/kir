@@ -13,6 +13,7 @@ import type { Picture } from "../types/pictureType.ts";
 import { watch } from "vue";
 import CollectionCard from "../shared/CollectionCard.vue";
 import { collections } from "../data/collections.ts";
+import { useCollectionsStore } from "../stores/colStore.ts";
 
 const yearsStore = useYearsStore();
 const hashTagsStore = useHashTagsStore();
@@ -91,7 +92,7 @@ function prevPicture() {
   selectedIndex.value = (selectedIndex.value - 1 + length) % length;
 }
 
-const emit = defineEmits<{ openCollection: [col_id: number] }>();
+const collectionsStore = useCollectionsStore()
 
 watch(
   filteredPictures,
@@ -104,16 +105,14 @@ watch(
 
 <template>
   <div class="feed">
-    <div class="feed__top">
       <HashTagBar />
       <div v-if="filteredCollections.length !== 0" class="feed__container">
         <CollectionCard
           v-for="(col, index) in filteredCollections"
           :title="col.title"
           :key="index"
-          @click="$emit('openCollection', col.id)"
+          @click="collectionsStore.openedCollectionId = col.id"
         />
-      </div>
     </div>
     <div v-if="allPicsLoaded" class="feed__grid">
       <PictureCard
@@ -168,24 +167,21 @@ watch(
     text-align: center;
     width: 90vw;
     font-size: 2rem;
-    margin: 0 auto;
+    margin: 10vh auto 0;
     opacity: 0.3;
     cursor: help;
   }
 
   &__container {
     width: 100%;
-    justify-content: end;
     display: flex;
-    padding: 20px;
     gap: 30px;
+    padding: 20px 0;
+    height: fit-content;
     flex-wrap: wrap;
+    margin-bottom: 5vh;
   }
 
-  &__top {
-    display: flex;
-    justify-content: space-between;
-  }
 }
 
 @media (max-width: 1200px) {
