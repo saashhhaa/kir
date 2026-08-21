@@ -34,7 +34,6 @@ const props = defineProps<Props>();
   &__img {
     width: 100%;
     user-select: none;
-    pointer-events: none;
     display: block;
   }
 

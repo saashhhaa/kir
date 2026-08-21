@@ -10,10 +10,10 @@ import { watch } from "vue";
 import { onMounted } from "vue";
 
 interface Props {
-    pictures:  Picture[],
+  pictures: Picture[];
 }
 
-const props = defineProps<Props>()
+const props = defineProps<Props>();
 
 const allPicsLoaded = ref(false);
 async function preloadImages(images: Picture[]) {
@@ -22,7 +22,7 @@ async function preloadImages(images: Picture[]) {
   const promises = images.map(async (pic) => {
     const img = new Image();
 
-    img.src = pic.image_url ;
+    img.src = pic.image_url;
 
     try {
       await img.decode();
@@ -33,7 +33,6 @@ async function preloadImages(images: Picture[]) {
 
   allPicsLoaded.value = true;
 }
-
 
 const selectedIndex = ref<number | null>(null);
 
@@ -51,10 +50,9 @@ const selectedTrack = computed(() => {
   );
 });
 
-function openPicture(index: number) {
-  selectedIndex.value = index;
+function openPicture(picture: Picture) {
+  selectedIndex.value = props.pictures.indexOf(picture);
 }
-
 function closePicture() {
   selectedIndex.value = null;
 }
@@ -95,7 +93,7 @@ onUnmounted(() => {
 const columns = computed(() => {
   const result: Picture[][] = Array.from(
     { length: columnCount.value },
-    () => []
+    () => [],
   );
 
   props.pictures.forEach((picture, index) => {
@@ -114,14 +112,14 @@ watch(
   async (pictures) => {
     await preloadImages(pictures);
   },
-  { immediate: true }
+  { immediate: true },
 );
 </script>
 
 <template>
   <div v-if="allPicsLoaded" class="grid">
-     <div
-     v-if="props.pictures.length !== 0"
+    <div
+      v-if="props.pictures.length !== 0"
       v-for="(column, columnIndex) in columns"
       :key="columnIndex"
       class="column"
@@ -131,9 +129,10 @@ watch(
         :key="index"
         :title="pic.title || ''"
         :img="pic.image_url"
+        @click="openPicture(pic)"
       />
     </div>
-  
+
     <p v-else class="grid__oops">૮₍ᵔ⤙ᵔ ₎ა</p>
   </div>
   <div v-else class="grid__loading">
@@ -212,10 +211,10 @@ watch(
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 15px;
 
-   &__loading {
-    grid-template-columns: repeat(2, 1fr);
+    &__loading {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
-}
 
   .column {
     gap: 15px;
@@ -231,6 +230,4 @@ watch(
     gap: 10px;
   }
 }
-
-
 </style>
