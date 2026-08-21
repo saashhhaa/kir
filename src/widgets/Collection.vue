@@ -4,7 +4,7 @@ import { collections } from "../data/collections.ts";
 import { pictures } from "../data/pictures";
 import { audio } from "../data/tracks.ts";
 import BackButton from "../shared/BackButton.vue";
-import PictureCard from "../shared/PictureCard.vue";
+import PicturesGrid from "../shared/PicturesGrid.vue";
 import { useCollectionsStore } from "../stores/colStore.ts";
 
 const collectionsStore = useCollectionsStore();
@@ -25,16 +25,7 @@ const trackList = audio.filter((song) =>
   <div class="collection">
     <BackButton variant="close_collection" />
 
-    <div class="collection__grid">
-      <PictureCard
-        v-if="filteredPictures.length !== 0"
-        v-for="(pic, index) in filteredPictures"
-        :key="index"
-        :title="pic.title || ''"
-        :img="pic.image_url"
-      />
-      <p v-else class="feed__oops">૮₍ᵔ⤙ᵔ ₎ა</p>
-    </div>
+    <PicturesGrid :pictures="filteredPictures"/>
     <div v-if="trackList.length!==0" class="collection__playlist">
       <AudioPlayer
         v-for="track in trackList"
@@ -80,5 +71,14 @@ const trackList = audio.filter((song) =>
     border: var(--light-border);
     background-color: black;
   }
+}
+
+@media (max-width: 1000px) {
+ .collection {
+   &__playlist {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+ }
 }
 </style>

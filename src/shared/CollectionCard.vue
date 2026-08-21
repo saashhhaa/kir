@@ -28,14 +28,25 @@ defineProps<Props>();
   }
 
   &__title {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     opacity: 0.5;
-    max-width: 6vw;
+    white-space: wrap;
+    overflow: hidden;
+    max-width: 100px;
     color: var(--main-text-inverse);
   }
 
   &:hover {
     opacity: 1;
   }
+}
+
+@media (max-width: 1000px) {
+ .card {
+    &__title {
+    max-width: 50px;
+  }
+
+ }
 }
 </style>
