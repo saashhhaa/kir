@@ -59,9 +59,108 @@ export const audio: Track[] = [
       "26/Tom_Dvo_k_Machinarium_Soundtrack_2010_The_Black_Brotherhood_Theme.mp3",
     ),
   },
+  // collection_child
+  {
+    id: 7,
+    title: "Пожалуйста только не домой",
+    artist: "Автоспорт",
+    file_path: getAudio(
+      "24/collection_child/Автоспорт_–_Пожалуйста,_только_не_домой.mp3",
+    ),
+  },
+  {
+    id: 7,
+    title: "daddy",
+    artist: "кояn",
+    file_path: getAudio("24/collection_child/Korn – Daddy.mp3"),
+  },
+  {
+    id: 7,
+    title: "falling away from me",
+    artist: "кояn",
+    file_path: getAudio("24/collection_child/Korn – Falling Away from Me.mp3"),
+  },
+  {
+    id: 7,
+    title: "отчим",
+    artist: "ksb murzik",
+    file_path: getAudio("24/collection_child/KSB muzic – Отчим.mp3"),
+  },
+  {
+    id: 7,
+    title: "подворотня мой дом",
+    artist: "#юравернись",
+    file_path: getAudio(
+      "24/collection_child/Valentin Strykalo – Подворотня - мой дом.mp3",
+    ),
+  },
+  // collection_green
+  {
+    id: 8,
+    title: "A Sudden Chaos",
+    artist: "Steve Gabry",
+    file_path: getAudio("24/collection_green/Steve Gabry – A Sudden Chaos.mp3"),
+  },
+  {
+    id: 8,
+    title: "A Dark Place",
+    artist: "Steve Gabry",
+    file_path: getAudio("24/collection_green/Steve Gabry – A Dark Place.mp3"),
+  },
+  {
+    id: 8,
+    title: "Silent Sorrow",
+    artist: "Saya no Uta",
+    file_path: getAudio(
+      "24/collection_green/Saya no Uta – Silent Sorrow.mp3",
+    ),
+  },
+   {
+    id: 8,
+    title: "Memories",
+    artist: "Steve Gabry",
+    file_path: getAudio(
+      "24/collection_green/Steve Gabry – Memories.mp3",
+    ),
+  },
+  {
+    id: 8,
+    title: "A Forgotten Ballad",
+    artist: "Steve Gabry",
+    file_path: getAudio(
+      "24/collection_green/Steve Gabry — The Other Side - A Forgotten Ballad.mp3",
+    ),
+  },
+  {
+    id: 9,
+    title: "Не хватает",
+    artist: "оральные хулиганы",
+    file_path: getAudio(
+      "25/collection_cigarets/оральные хулиганы – Не хватает.m4a",
+    ),
+  },
+  {
+    id: 9,
+    title: "Біля берегів моря",
+    artist: "plaaaato",
+    file_path: getAudio(
+      "25/collection_cigarets/plaaaato - Topic – Біля берегів моря.m4a",
+    ),
+  },
+   {
+    id: 9,
+    title: "Глюки",
+    artist: "Zlypni",
+    file_path: getAudio(
+      "25/collection_cigarets/Zlypni – Глюки.m4a",
+    ),
+  },
+    {
+    id: 9,
+    title: "розмова без слів 2",
+    artist: "headachee",
+    file_path: getAudio(
+      "25/collection_cigarets/headachee – розмова без слів 2.m4a",
+    ),
+  },
 ];
-
-// C:\Users\HomePC\Desktop\kir\public\audio\26\
-// C:\Users\HomePC\Desktop\kir\public\audio\26\
-// C:\Users\HomePC\Desktop\kir\public\audio\26\
-// C:\Users\HomePC\Desktop\kir\public\audio\26\
