@@ -36,7 +36,9 @@ function toggleZoom() {
         @click="emit('prev')"
       />
       <div @click.stop class="picture__img-wrapper">
-        <h2 v-if="title" class="picture__title" :class="{ hidden: isZoomed }" >{{ title }}</h2>
+        <h2 v-if="title" class="picture__title" :class="{ hidden: isZoomed }">
+          {{ title }}
+        </h2>
         <img
           @click="toggleZoom"
           :src="img"
@@ -44,7 +46,13 @@ function toggleZoom() {
           :class="{ zoom: isZoomed }"
           alt=""
         />
-        <p v-if="description" class="picture__description" :class="{ hidden: isZoomed }">{{ description }}</p>
+        <p
+          v-if="description"
+          class="picture__description"
+          :class="{ hidden: isZoomed }"
+        >
+          {{ description }}
+        </p>
         <EntityAudioPlayer
           :class="{ hidden: isZoomed }"
           v-if="track"
@@ -125,7 +133,8 @@ function toggleZoom() {
     z-index: 1000;
     max-width: 75vw;
     max-height: 75vh;
-
+    -webkit-user-drag: none;
+    user-select: none;
     width: auto;
     height: auto;
 

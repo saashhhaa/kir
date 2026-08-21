@@ -6,18 +6,11 @@ interface Props {
 }
 
 const props = defineProps<Props>();
-
- 
 </script>
 
 <template>
   <div class="card">
-    <img
-      :src="img"
-      :alt="title"
-      class="card__img"
-      decoding="async"
-    />
+    <img :src="img" :alt="title" class="card__img" decoding="async" />
     <div class="card__overlay">
       {{ title }}
     </div>
@@ -40,6 +33,8 @@ const props = defineProps<Props>();
 
   &__img {
     width: 100%;
+    user-select: none;
+    pointer-events: none;
     display: block;
   }
 

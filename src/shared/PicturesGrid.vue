@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed } from "vue";
+import { computed, onUnmounted } from "vue";
 import PictureCard from "../shared/PictureCard.vue";
 import { ref } from "vue";
 import PictureProfile from "../components/PictureProfile.vue";
@@ -7,6 +7,7 @@ import { audio } from "../data/tracks.ts";
 import LoadingPictureCard from "../shared/LoadingPictureCard.vue";
 import type { Picture } from "../types/pictureType.ts";
 import { watch } from "vue";
+import { onMounted } from "vue";
 
 interface Props {
     pictures:  Picture[],
@@ -70,6 +71,44 @@ function prevPicture() {
   selectedIndex.value = (selectedIndex.value - 1 + length) % length;
 }
 
+const columnCount = ref(4);
+
+function updateColumnCount() {
+  if (window.innerWidth <= 800) {
+    columnCount.value = 2;
+  } else if (window.innerWidth <= 1200) {
+    columnCount.value = 3;
+  } else {
+    columnCount.value = 4;
+  }
+}
+
+onMounted(() => {
+  updateColumnCount();
+  window.addEventListener("resize", updateColumnCount);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", updateColumnCount);
+});
+
+const columns = computed(() => {
+  const result: Picture[][] = Array.from(
+    { length: columnCount.value },
+    () => []
+  );
+
+  props.pictures.forEach((picture, index) => {
+    const column = result[index % columnCount.value];
+
+    if (column) {
+      column.push(picture);
+    }
+  });
+
+  return result;
+});
+
 watch(
   () => props.pictures,
   async (pictures) => {
@@ -81,14 +120,20 @@ watch(
 
 <template>
   <div v-if="allPicsLoaded" class="grid">
-    <PictureCard
-      v-if="props.pictures.length !== 0"
-      v-for="(pic, index) in props.pictures"
-      :key="index"
-      :title="pic.title || ''"
-      :img="pic.image_url"
-      @click="openPicture(index)"
-    />
+     <div
+     v-if="props.pictures.length !== 0"
+      v-for="(column, columnIndex) in columns"
+      :key="columnIndex"
+      class="column"
+    >
+      <PictureCard
+        v-for="(pic, index) in column"
+        :key="index"
+        :title="pic.title || ''"
+        :img="pic.image_url"
+      />
+    </div>
+  
     <p v-else class="grid__oops">૮₍ᵔ⤙ᵔ ₎ა</p>
   </div>
   <div v-else class="grid__loading">
@@ -142,25 +187,50 @@ watch(
   }
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  min-width: 0;
+}
+
 @media (max-width: 1200px) {
   .grid {
-    column-count: 3;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 800px) {
   .grid {
-    column-count: 2;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
 
-    &__loading {
+   &__loading {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+  .column {
+    gap: 15px;
   }
 }
 
 @media (max-width: 500px) {
   .grid {
-    column-count: 1;
+    gap: 10px;
+  }
+
+  .column {
+    gap: 10px;
   }
 }
+
+
 </style>

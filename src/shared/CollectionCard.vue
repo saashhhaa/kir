@@ -19,6 +19,8 @@ defineProps<Props>();
   flex-direction: column;
   background-color: var(--profile-back);
   padding: 20px;
+  gap: 5px;
+  aspect-ratio: 1/1;
   cursor: pointer;
   border: 2px solid white;
   opacity: 0.7;
@@ -45,6 +47,10 @@ defineProps<Props>();
  .card {
     &__title {
     max-width: 50px;
+  }
+
+  &__img {
+    width: 10vw;
   }
 
  }

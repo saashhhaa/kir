@@ -21,7 +21,7 @@ export const collections : Collection[]  = [
     },
        {
         id: 4,
-        title: 'овчеки',
+        title: 'овечки',
         year: 25,
     },
 ]
