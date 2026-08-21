@@ -4,7 +4,7 @@ export interface Picture {
   description?: string | null;
   image_url: string;
   year?: number | null;
-  hashtag_id?: number | null;
+  hashtag_id?: number[] | number | null;
   track_id?: number | null;
   collection_id?: number | null;
 }

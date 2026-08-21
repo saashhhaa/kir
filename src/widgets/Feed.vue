@@ -18,18 +18,26 @@ const filteredCollections = computed(() => {
 const hashTagsStore = useHashTagsStore();
 
 const filteredPictures = computed(() => {
-  if (hashTagsStore.currentHashId === null) {
-    return pictures.filter(
-      (pic) => pic.year === yearsStore.currentYear && !pic.collection_id,
+  return pictures.filter((pic) => {
+    const matchesYear = pic.year === yearsStore.currentYear;
+    const matchesCollection = !pic.collection_id;
+
+    if (hashTagsStore.currentHashId === null) {
+      return matchesYear && matchesCollection;
+    }
+
+    const hashtags = Array.isArray(pic.hashtag_id)
+      ? pic.hashtag_id
+      : pic.hashtag_id !== null && pic.hashtag_id !== undefined
+        ? [pic.hashtag_id]
+        : [];
+
+    const matchesHashtag = hashtags.includes(
+      hashTagsStore.currentHashId
     );
-  } else {
-    return pictures.filter(
-      (pic) =>
-        pic.year === yearsStore.currentYear &&
-        pic.hashtag_id === hashTagsStore.currentHashId &&
-        !pic.collection_id,
-    );
-  }
+
+    return matchesYear && matchesCollection && matchesHashtag;
+  });
 });
 
 const collectionsStore = useCollectionsStore()

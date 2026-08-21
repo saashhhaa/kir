@@ -230,7 +230,7 @@ export const pictures: Picture[] = [
     title: "зефир",
     image_url: getImage("25/the_fear.png"),
     year: 25,
-    hashtag_id: 1, // ????
+    hashtag_id: [1, 2],  // ДВОЙНОЙ ХЭШТЕГ
   },
   {
     image_url: getImage("25/woman.png"),
@@ -241,14 +241,14 @@ export const pictures: Picture[] = [
     title: "влад приденьгах №2",
     image_url: getImage("25/xarekter1.png"),
     year: 25,
-    hashtag_id: 3, // ДВОЙНОЙ ХЭШТЕГ
+    hashtag_id: [1, 3], // ДВОЙНОЙ ХЭШТЕГ
     track_id: 11,
   },
   {
     title: "влад приденьгах №1",
     image_url: getImage("25/xarakter2.png"),
     year: 25,
-    hashtag_id: 3, // ДВОЙНОЙ ХЭШТЕГ
+    hashtag_id: [1, 3], // ДВОЙНОЙ ХЭШТЕГ
     track_id: 12, 
   },
   {
