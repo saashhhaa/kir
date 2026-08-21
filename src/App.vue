@@ -3,6 +3,7 @@ import Collection from './widgets/Collection.vue';
 import Feed from './widgets/Feed.vue';
 import Header from './widgets/Header.vue';
 import { useCollectionsStore } from './stores/colStore.ts';
+import Footer from './components/Footer.vue';
 
 const collectionsStore = useCollectionsStore()
 
@@ -12,6 +13,7 @@ const collectionsStore = useCollectionsStore()
   <Header/>
   <Feed v-if="collectionsStore.openedCollectionId===null"/>
   <Collection v-else />
+  <Footer/>
 </template>
 
 <style scoped>
