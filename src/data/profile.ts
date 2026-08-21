@@ -7,7 +7,7 @@ export const profile = {
     NICKNAME: "Кир",
     DESCRIPTION: "(( _ _ ))..zzzZ",
     IMAGE: profile_img,
-    FOOTER: 'няняня мурмур хз ч тут писать пока пусть так будет [] <- ебейшая кириешка '
+    FOOTER: '｀、ヽ(ノ＞＜)ノ ｀、ヽ｀☂ '
 }
 
 //  \n [] <- ебейшая кириешка
