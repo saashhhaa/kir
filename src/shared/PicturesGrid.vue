@@ -119,6 +119,7 @@ watch(
     display: grid;
     grid-template-rows: repeat(3, 40vh);
     gap: 20px;
+    margin-bottom: 2vh;
   }
 
   &__oops {
@@ -150,6 +151,10 @@ watch(
 @media (max-width: 800px) {
   .grid {
     column-count: 2;
+
+    &__loading {
+    grid-template-columns: repeat(2, 1fr);
+  }
   }
 }
 

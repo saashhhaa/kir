@@ -70,5 +70,11 @@ const collectionsStore = useCollectionsStore()
   }
 
 }
-
+@media (max-width: 800px) {
+  .feed {
+    &__container {
+    gap: 10px;
+    }
+  }
+}
 </style>

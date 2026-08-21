@@ -15,7 +15,7 @@ function close() {
 
 <template>
   <div @click="close" class="back-btn">
-    <img src="@/assets/images/exit.svg" alt="" />
+    <img class="back-btn__img" src="@/assets/images/exit.svg" alt="" />
   </div>
 </template>
 
@@ -29,6 +29,15 @@ function close() {
   opacity: 0.5;
   &:hover {
     opacity: 1;
+  }
+}
+
+@media (max-width: 800px) {
+  .back-btn {
+    border-width: 1.5px;
+    &__img {
+      width: 20px;
+    }
   }
 }
 </style>
