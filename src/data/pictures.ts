@@ -2,6 +2,7 @@ import type { Picture } from "../types/pictureType";
 import { getImage } from "./assets";
 
 export const pictures: Picture[] = [
+  //collection_child
   {
     title: "стул, штаны, ремень",
     image_url: getImage("24/collection_child/стул, штаны, ремень.png"),
@@ -22,12 +23,12 @@ export const pictures: Picture[] = [
     image_url: getImage("24/collection_child/так он станет добрым.png"),
     collection_id: 3,
   },
-   {
+  {
     title: "почему же ты не помог",
     image_url: getImage("24/collection_child/почему же ты не помог.png"),
     collection_id: 3,
   },
-   {
+  {
     title: "я грязная",
     image_url: getImage("24/collection_child/я грязная.png"),
     collection_id: 3,
@@ -42,6 +43,7 @@ export const pictures: Picture[] = [
     image_url: getImage("24/collection_child/больно.png"),
     collection_id: 3,
   },
+  //collection_green
   {
     title: "не двинуться",
     image_url: getImage("24/collection_green/сложно подвинуться.png"),
@@ -67,6 +69,7 @@ export const pictures: Picture[] = [
     image_url: getImage("24/collection_green/наблюдают.png"),
     collection_id: 2,
   },
+  //collection_sheep
   {
     title: "акцент",
     image_url: getImage("24/collection_sheeps/sheep1.png"),
@@ -87,6 +90,7 @@ export const pictures: Picture[] = [
     image_url: getImage("24/collection_sheeps/sheep4.png"),
     collection_id: 4,
   },
+  //collection_cigarets
   {
     title: "#1",
     description: "===°~",
@@ -159,7 +163,7 @@ export const pictures: Picture[] = [
     image_url: getImage("25/collection_cigarets/тепло11.png"),
     collection_id: 1,
   },
-
+  // OTHERS :
   {
     title: "happy halloween",
     image_url: getImage("25/котИТыква.png"),
@@ -190,7 +194,7 @@ export const pictures: Picture[] = [
     image_url: getImage("25/рыба.png"),
     year: 25,
     hashtag_id: 1,
-    track_id: 1, //TODO:
+    track_id:10,
   },
   {
     title: "вот бы справить мне костюм себе из...",
@@ -198,7 +202,7 @@ export const pictures: Picture[] = [
     image_url: getImage("25/сталин.png"),
     year: 25,
     hashtag_id: 1,
-    track_id: 1, //TODO:
+    track_id: 14
   },
   {
     title: "yume",
@@ -220,7 +224,7 @@ export const pictures: Picture[] = [
     image_url: getImage("25/freedom.png"),
     year: 25,
     hashtag_id: 1,
-    track_id: 1, //TODO:
+    track_id:13
   },
   {
     title: "зефир",
@@ -238,14 +242,14 @@ export const pictures: Picture[] = [
     image_url: getImage("25/xarekter1.png"),
     year: 25,
     hashtag_id: 3, // ДВОЙНОЙ ХЭШТЕГ
-    track_id: 1, //TODO:
+    track_id: 11,
   },
   {
     title: "влад приденьгах №1",
     image_url: getImage("25/xarakter2.png"),
     year: 25,
     hashtag_id: 3, // ДВОЙНОЙ ХЭШТЕГ
-    track_id: 1, //TODO:
+    track_id: 12, 
   },
   {
     description: "пирокинезис?",

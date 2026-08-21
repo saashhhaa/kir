@@ -163,4 +163,44 @@ export const audio: Track[] = [
       "25/collection_cigarets/headachee – розмова без слів 2.m4a",
     ),
   },
+    {
+    id: 10,
+    title: "Rusty Lake Family Tune",
+    artist: "Victor Butzelaar",
+    file_path: getAudio(
+      "25/Victor Butzelaar – Rusty Lake Family Tune.mp3",
+    ),
+  },
+   {
+    id: 11,
+    title: "Kladman",
+    artist: "XARAKTER",
+    file_path: getAudio(
+      "25/XARAKTER for Discord – Kladman.m4a",
+    ),
+  },
+  {
+    id: 12,
+    title: "Домовитись",
+    artist: "XARAKTER",
+    file_path: getAudio(
+      "25/Xarakter – Домовитись.m4a",
+    ),
+  },
+   {
+    id: 13,
+    title: "Свобода",
+    artist: "гроб",
+    file_path: getAudio(
+      "25/Егор Летов – Свобода.m4a",
+    ),
+  },
+  {
+    id: 14,
+    title: " Сталинский костюм",
+    artist: "Михаил Елизаров",
+    file_path: getAudio(
+      "25/Михаил Елизаров - Сталинский костюм.mp3",
+    ),
+  },
 ];
