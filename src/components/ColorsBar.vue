@@ -17,6 +17,8 @@ function handleClick (c:string){
 
 <style scoped lang="scss">
 .bar {
-  
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 </style>

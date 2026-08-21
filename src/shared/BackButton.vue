@@ -21,12 +21,14 @@ function close() {
 
 <style scoped lang="scss">
 .back-btn {
-  border: 2px solid rgba(0, 0, 0, 0.644);
+  border: 2px solid rgba(250, 247, 247, 0.644);
   cursor: pointer;
   width: fit-content;
-  margin-bottom: 5vh;
   padding: 10px;
   opacity: 0.5;
+  &__img {
+    filter: invert(1);
+  }
   &:hover {
     opacity: 1;
   }

@@ -16,11 +16,11 @@ function handleYearClick(year: number) {
 </div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 .bar {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  margin-top: 5vh;
+  margin: 0;
 }
 </style>

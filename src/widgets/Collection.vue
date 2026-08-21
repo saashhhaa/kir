@@ -3,7 +3,6 @@ import AudioPlayer from "../components/AudioPlayer.vue";
 import { collections } from "../data/collections.ts";
 import { pictures } from "../data/pictures";
 import { audio } from "../data/tracks.ts";
-import BackButton from "../shared/BackButton.vue";
 import PicturesGrid from "../shared/PicturesGrid.vue";
 import { useCollectionsStore } from "../stores/colStore.ts";
 
@@ -23,7 +22,6 @@ const trackList = audio.filter((song) =>
 
 <template>
   <div class="collection">
-    <BackButton variant="close_collection" />
 
     <PicturesGrid :pictures="filteredPictures"/>
     <div v-if="trackList.length!==0" class="collection__playlist">

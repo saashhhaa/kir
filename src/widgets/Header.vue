@@ -2,7 +2,10 @@
 import ColorsBar from "../components/ColorsBar.vue";
 import Profile from "../components/Profile.vue";
 import YearsBar from "../components/YearsBar.vue";
+import BackButton from "../shared/BackButton.vue";
+import { useCollectionsStore } from "../stores/colStore.ts";
 
+const collectionsStore = useCollectionsStore()
 
 </script>
 
@@ -12,7 +15,8 @@ import YearsBar from "../components/YearsBar.vue";
       <Profile />
     </div>
     <div class="profile__flex">
-      <YearsBar />
+      <YearsBar v-if="collectionsStore.openedCollectionId === null" />
+      <BackButton v-else variant="close_collection" class="profile__button"/>
       <ColorsBar />
     </div>
 
@@ -34,6 +38,8 @@ import YearsBar from "../components/YearsBar.vue";
     width: 100%;
     align-items: center;
     flex-wrap: wrap;
+    margin-top: 5vh;
+    gap: 3vh;
   }
 
   &__main {
@@ -49,6 +55,11 @@ import YearsBar from "../components/YearsBar.vue";
     &__main {
       flex-direction: column;
     }
+
+    &__button {
+      order: 2 !important;
+    }
   }
+
 }
 </style>

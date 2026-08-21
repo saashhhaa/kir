@@ -32,7 +32,7 @@ function handleClick(id: number) {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 2vh;
+  margin: 5vh 0 2vh;
   width: 100%;
   height: fit-content;
 }
