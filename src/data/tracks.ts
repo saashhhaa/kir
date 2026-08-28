@@ -203,4 +203,59 @@ export const audio: Track[] = [
       "25/Михаил Елизаров - Сталинский костюм.mp3",
     ),
   },
+  {
+    id: 15,
+    title: 'gloomy sunday',
+    artist: "billie holiday",
+    file_path: getAudio(
+        "24/Billie_Holiday_-_Gloomy_Sunday.mp3",
+    ),
+  },
+  {
+    id: 16,
+    title: 'Happy Halloween',
+    artist: "Junky feat Rin",
+    file_path: getAudio(
+        "24/Junky_feat._Kagamine_Rin-Happy_Halloween.mp3",
+    ),
+  },
+  {
+    id: 17,
+    title: 'Kichi',
+    artist: "Suffer! Suffer!",
+    file_path: getAudio(
+        "24/Kichi – Suffer! Suffer!.mp3",
+    ),
+  },
+  {
+    id: 18,
+    title: 'Milk_outside_a_bag_of_milk',
+    file_path: getAudio(
+        "24/Milk_outside_a_bag_of_milk.mp3",
+    ),
+  },
+  {
+    id: 19,
+    title: 'Lovely Arps',
+    artist: 'Rain World',
+    file_path: getAudio(
+        "24/Rain World – Lovely Arps.mp3",
+    ),
+  },
+  {
+    id: 20,
+    title: 'Pornography',
+    artist: 'The Cure',
+    file_path: getAudio(
+        "24/The Cure – Pornography.mp3",
+    ),
+  },
+  {
+    id: 21,
+    title: 'голобородько толя',
+    artist: 'птицу ешь?',
+    file_path: getAudio(
+        "24/Птицу_ЕМЪ_–_Великомученик_Голобородько_Толик.mp3",
+    ),
+  },
 ];

@@ -165,6 +165,108 @@ export const pictures: Picture[] = [
   },
   // OTHERS :
   {
+    image_url: getImage("24/redSketch.png"),
+    year: 24,
+    hashtag_id: 2,
+  },
+  {
+    image_url: getImage("24/redSketch2.png"),
+    year: 24,
+    hashtag_id: 2,
+  },
+  {
+    title: "gloomy sunday",
+    image_url: getImage("24/gloomy_sunday.png"),
+    year: 24,
+    hashtag_id: 1,
+    track_id: 15,
+  },
+  {
+    image_url: getImage("24/скетч_руки.png"),
+    year: 24,
+    hashtag_id: 2,
+  },
+  {
+    title: "Всем отчего-то кажется, что я — лох ",
+    description: 'А если вдруг окажется, что я — бог?',
+    image_url: getImage("24/голобородько_толик.png"),
+    year: 24,
+    hashtag_id: 1,
+    track_id: 21,
+  },
+  {
+    title: "поможешь бабуле?",
+    image_url: getImage("24/бабуля.png"),
+    year: 24,
+    hashtag_id: 1,
+    track_id: 18,
+  },
+  {
+    title: "курение вредит вашему здоровью",
+    image_url: getImage("24/курение_вредит.png"),
+    year: 24,
+    hashtag_id: 2,
+  },
+  {
+    title: "soir noir",
+    description: 'soir bleu',
+    image_url: getImage("24/soir_noir.png"),
+    year: 24,
+    hashtag_id: 1,
+  },
+  {
+    image_url: getImage("24/скетч.png"),
+    year: 24,
+    hashtag_id: 2,
+  },
+  {
+    image_url: getImage("24/путешествие.png"),
+    year: 24,
+    hashtag_id: 1,
+    track_id: 19,
+  },
+  {
+    image_url: getImage("24/лева.png"),
+    year: 24,
+    hashtag_id: 1,
+    track_id: 17,
+  },
+  {
+    title: 'Happy Halloween',
+    image_url: getImage("24/хэллоуин.png"),
+    year: 24,
+    hashtag_id: 1,
+    track_id: 16,
+  },
+  {
+    image_url: getImage("24/горилаз_скетч.jpg"),
+    year: 24,
+    hashtag_id: 2,
+  },
+
+  {
+    title: 'теперь лишь человек',
+    image_url: getImage("24/бинты.png"),
+    year: 24,
+    hashtag_id: 1,
+    track_id: 20,
+  },
+  {
+    image_url: getImage("24/скетч2.jpg"),
+    year: 24,
+    hashtag_id: 2,
+  },
+  {
+    image_url: getImage("24/птицу_емъ.png"),
+    year: 24,
+    hashtag_id: 2,
+  },
+  {
+    image_url: getImage("24/sketchField.png"),
+    year: 24,
+    hashtag_id: 2,
+  },
+  {
     title: "happy halloween",
     image_url: getImage("25/котИТыква.png"),
     year: 25,
@@ -252,6 +354,61 @@ export const pictures: Picture[] = [
     track_id: 12, 
   },
   {
+    image_url: getImage("26/коты_раскраска2.jpg"),
+    year: 26,
+    hashtag_id: 2,
+  },
+  {
+    image_url: getImage("26/коты_раскраска.jpg"),
+    year: 26,
+    hashtag_id: 2,
+  },
+  {
+    image_url: getImage("26/коты_скетч_кучка.jpg"),
+    year: 26,
+    hashtag_id: 2,
+  },
+  {
+    image_url: getImage("26/скетч_курить палочками.jpg"),
+    year: 26,
+    hashtag_id: 2,
+  },
+  {
+    image_url: getImage("26/скетч_укурыш.jpg"),
+    year: 26,
+    hashtag_id: 2,
+  },
+  {
+    image_url: getImage("26/скетч_ноги_иисуса.jpg"),
+    year: 26,
+    hashtag_id: 2,
+  },
+  {
+    image_url: getImage("26/стадик_ноги.jpg"),
+    year: 26,
+    hashtag_id: 3,
+  },
+  {
+    image_url: getImage("26/стадик_торс.jpg"),
+    year: 26,
+    hashtag_id: 3,
+  },
+  {
+    image_url: getImage("26/скетч_монах.jpg"),
+    year: 26,
+    hashtag_id:[ 3,2],
+  },
+  {
+    image_url: getImage("26/скетч_женщины.jpg"),
+    year: 26,
+    hashtag_id: [2,3],
+  },
+  {
+    image_url: getImage("26/скетч_шахматы.jpg"),
+    year: 26,
+    hashtag_id: [1, 2],
+  },
+  {
     description: "пирокинезис?",
     image_url: getImage("25/курящий.png"),
     year: 25,
@@ -266,6 +423,11 @@ export const pictures: Picture[] = [
   {
     title: "инфант №2",
     image_url: getImage("27/infant2.JPG"),
+    year: 27,
+    hashtag_id: 2,
+  },
+  {
+    image_url: getImage("27/скетч_ноги.png"),
     year: 27,
     hashtag_id: 2,
   },
