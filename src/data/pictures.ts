@@ -2,6 +2,37 @@ import type { Picture } from "../types/pictureType";
 import { getImage } from "./assets";
 
 export const pictures: Picture[] = [
+  //collection_birds
+  {
+    title: "китоглав №1",
+    image_url: getImage("27/collection_birds/китоглав1.png"),
+    collection_id: 5,
+  },
+  {
+    title: "китоглав №2",
+    image_url: getImage("27/collection_birds/китоглав2.png"),
+    collection_id: 5,
+  },
+  {
+    title: "глухарь",
+    image_url: getImage("27/collection_birds/глухарь.png"),
+    collection_id: 5,
+  },
+  {
+    title: "ворона",
+    image_url: getImage("27/collection_birds/ворона.png"),
+    collection_id: 5,
+  },
+  {
+    title: "сова, голубь, киви",
+    image_url: getImage("27/collection_birds/сова_голубь_киви.png"),
+    collection_id: 5,
+  },
+  {
+    title: "сорока, клест, воробей",
+    image_url: getImage("27/collection_birds/сорока_клест_воробей.png"),
+    collection_id: 5,
+  },
   //collection_child
   {
     title: "стул, штаны, ремень",
