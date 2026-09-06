@@ -5,6 +5,7 @@ import { pictures } from "../data/pictures";
 import { audio } from "../data/tracks.ts";
 import PicturesGrid from "../shared/PicturesGrid.vue";
 import { useCollectionsStore } from "../stores/colStore.ts";
+import CounterPics from "../shared/CounterPics.vue";
 
 const collectionsStore = useCollectionsStore();
 
@@ -22,8 +23,9 @@ const trackList = audio.filter((song) =>
 
 <template>
   <div class="collection">
-
     <PicturesGrid :pictures="filteredPictures"/>
+    <CounterPics class="collection__counter" :amount="filteredPictures.length"/>
+
     <div v-if="trackList.length!==0" class="collection__playlist">
       <AudioPlayer
         v-for="track in trackList"
@@ -41,6 +43,10 @@ const trackList = audio.filter((song) =>
   background-color: var(--feed-back);
   min-height: 100vh;
   width: 100%;
+
+  &__counter {
+    margin-bottom: 2vh;
+  }
 
   &__grid {
     column-count: 4;

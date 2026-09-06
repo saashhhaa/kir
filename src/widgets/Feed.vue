@@ -46,7 +46,7 @@ const collectionsStore = useCollectionsStore()
 
 <template>
   <div class="feed">
-      <HashTagBar />
+      <HashTagBar :amount="filteredPictures.length"/>
       <div v-if="filteredCollections.length !== 0" class="feed__container">
         <CollectionCard
           v-for="(col, index) in filteredCollections"

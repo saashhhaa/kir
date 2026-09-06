@@ -196,6 +196,18 @@ export const pictures: Picture[] = [
   },
   // OTHERS :
   {
+    title: "cc №1",
+    image_url: getImage("26/cc.png"),
+    year: 26,
+    hashtag_id: 2,
+  },
+  {
+    title: "cc №2",
+    image_url: getImage("26/cc2.png"),
+    year: 26,
+    hashtag_id: 2,
+  },
+  {
     image_url: getImage("24/redSketch.png"),
     year: 24,
     hashtag_id: 2,

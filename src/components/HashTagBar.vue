@@ -2,10 +2,15 @@
 import { hashtags } from "../data/hashtags";
 import HashTag from "../shared/HashTag.vue";
 import { useHashTagsStore } from "../stores/hashtagsStore";
+import CounterPics from "../shared/CounterPics.vue";
+
+interface Props {
+  amount?: number;
+}
+
+defineProps<Props>();
 
 const hashTagStore = useHashTagsStore();
-
-
 function handleClick(id: number) {
   if (hashTagStore.currentHashId === id) {
     hashTagStore.setCurrHash(null);
@@ -24,6 +29,7 @@ function handleClick(id: number) {
       :code="hash.code"
       @click="handleClick(hash.id)"
     />
+      <CounterPics :amount="amount || null"/>
   </div>
 </template>
 
