@@ -196,6 +196,24 @@ export const pictures: Picture[] = [
   },
   // OTHERS :
   {
+    title: "осень №1",
+    image_url: getImage("27/осень.png"),
+    year: 27,
+    hashtag_id: 1,
+  },
+  {
+    title: "осень №2",
+    image_url: getImage("27/осень2.png"),
+    year: 27,
+    hashtag_id: 1,
+  },
+  {
+    title: "лесовички",
+    image_url: getImage("27/детки.png"),
+    year: 27,
+    hashtag_id: 2,
+  },
+  {
     title: "cc №1",
     image_url: getImage("26/cc.png"),
     year: 26,
