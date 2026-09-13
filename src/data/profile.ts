@@ -17,9 +17,7 @@ function getCurrentSeason (){
     else if (month>=9 && month <=11) return 'fall'
     else return 'winter'
 }
-// const currSeason = FOOTER_TEXT[getCurrentSeason()]
-
-const currSeason = FOOTER_TEXT["summer"]
+const currSeason = FOOTER_TEXT[getCurrentSeason()]
 
 export const profile = {
     NICKNAME: "Кир",
