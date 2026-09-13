@@ -258,4 +258,12 @@ export const audio: Track[] = [
         "24/Птицу_ЕМЪ_–_Великомученик_Голобородько_Толик.mp3",
     ),
   },
+  {
+    id: 22,
+    title: 'Stories',
+    artist: 'Kuroishi Hitom',
+    file_path: getAudio(
+        "26/Kuroishi_Hitomi_Angel_Feather_Voice_Stories_SkySound_cc.mp3",
+    ),
+  },
 ];

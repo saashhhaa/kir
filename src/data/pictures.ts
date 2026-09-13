@@ -218,11 +218,18 @@ export const pictures: Picture[] = [
     image_url: getImage("26/cc.png"),
     year: 26,
     hashtag_id: 2,
+    track_id: 22
   },
   {
     title: "cc №2",
     image_url: getImage("26/cc2.png"),
     year: 26,
+    hashtag_id: 2,
+    track_id: 22
+  },
+  {
+    image_url: getImage("27/лица.png"),
+    year: 27,
     hashtag_id: 2,
   },
   {
