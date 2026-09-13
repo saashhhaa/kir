@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import EntityAudioPlayer from "./AudioPlayer.vue";
-import { ref } from "vue";
+import {onMounted, onUnmounted, ref} from "vue";
 import type { Track } from "../types/trackType.ts";
 
 interface Props {
@@ -22,6 +22,31 @@ const isZoomed = ref(false);
 function toggleZoom() {
   isZoomed.value = !isZoomed.value;
 }
+
+function handleKeydown(event: KeyboardEvent) {
+  if (event.key === "ArrowLeft") {
+    event.preventDefault();
+    emit("prev");
+  }
+
+  if (event.key === "ArrowRight") {
+    event.preventDefault();
+    emit("next");
+  }
+
+  if (event.key === "Escape") {
+    emit("close");
+  }
+}
+
+onMounted(() => {
+  window.addEventListener("keydown", handleKeydown);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("keydown", handleKeydown);
+});
+
 </script>
 
 <template>
