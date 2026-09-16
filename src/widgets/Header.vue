@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import ColorsBar from "../components/ColorsBar.vue";
-import Profile from "../components/Profile.vue";
+import ProfileBanner from "../components/ProfileBanner.vue";
 import YearsBar from "../components/YearsBar.vue";
 import BackButton from "../shared/BackButton.vue";
 import { useCollectionsStore } from "../stores/colStore.ts";
@@ -12,7 +12,7 @@ const collectionsStore = useCollectionsStore()
 <template>
   <div class="profile">
     <div class="profile__main">
-      <Profile />
+      <ProfileBanner />
     </div>
     <div class="profile__flex">
       <YearsBar v-if="collectionsStore.openedCollectionId === null" />

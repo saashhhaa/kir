@@ -23,7 +23,8 @@ export const profile = {
     NICKNAME: "Кир",
     DESCRIPTION: "(( _ _ ))..zzzZ",
     IMAGE: profile_img,
-    FOOTER: currSeason
+    FOOTER: currSeason,
+    INFO_VISIBILITY: true
 }
 
 //  \n [] <- ебейшая кириешка

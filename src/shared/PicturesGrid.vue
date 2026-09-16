@@ -8,11 +8,12 @@ import LoadingPictureCard from "../shared/LoadingPictureCard.vue";
 import type { Picture } from "../types/pictureType.ts";
 import { watch } from "vue";
 import { onMounted } from "vue";
+import {useInfoVisibility} from "../stores/infoVisibility.ts";
 
 interface Props {
   pictures: Picture[];
 }
-
+const infoVisibilityStore = useInfoVisibility()
 const props = defineProps<Props>();
 
 const allPicsLoaded = ref(false);
@@ -136,12 +137,13 @@ watch(
     <p v-else class="grid__oops">૮₍ᵔ⤙ᵔ ₎ა</p>
   </div>
   <div v-else class="grid__loading">
-    <LoadingPictureCard v-for="_ in 9" />
+    <LoadingPictureCard v-for="_ in 9" :key="_" />
   </div>
   <PictureProfile
     v-if="selectedPicture"
     :title="selectedPicture.title || ''"
     :description="selectedPicture.description ?? ''"
+    :info-visibility="infoVisibilityStore.infoVisibility"
     :img="selectedPicture.image_url"
     :track="selectedTrack"
     @close="closePicture"

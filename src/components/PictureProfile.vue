@@ -8,6 +8,7 @@ interface Props {
   description?: string;
   img: string;
   track?: Track | null;
+  infoVisibility: boolean;
 }
 
 const props = defineProps<Props>();
@@ -61,7 +62,7 @@ onUnmounted(() => {
         @click="emit('prev')"
       />
       <div @click.stop class="picture__img-wrapper">
-        <h2 v-if="title" class="picture__title" :class="{ hidden: isZoomed }">
+        <h2 v-if="title && infoVisibility" class="picture__title" :class="{ hidden: isZoomed }">
           {{ title }}
         </h2>
         <img
@@ -72,7 +73,7 @@ onUnmounted(() => {
           alt=""
         />
         <p
-          v-if="description"
+          v-if="description && infoVisibility"
           class="picture__description"
           :class="{ hidden: isZoomed }"
         >
@@ -80,7 +81,7 @@ onUnmounted(() => {
         </p>
         <AudioPlayer
           :class="{ hidden: isZoomed }"
-          v-if="track"
+          v-if="track && infoVisibility"
           :src="track.file_path"
           :title="track.title"
           :artist="track.artist"

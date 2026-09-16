@@ -1,9 +1,12 @@
 <script setup lang="ts">
+import {useInfoVisibility} from "../stores/infoVisibility.ts";
+
 interface Props {
   title: string;
   img: string;
   hashtag?: string;
 }
+const infoVisibilityStore = useInfoVisibility()
 
 const props = defineProps<Props>();
 </script>
@@ -11,8 +14,8 @@ const props = defineProps<Props>();
 <template>
   <div class="card">
     <img :src="img" :alt="title" class="card__img" decoding="async" />
-    <div class="card__overlay">
-      {{ title }}
+    <div  class="card__overlay">
+      {{infoVisibilityStore.infoVisibility ? title : '' }}
     </div>
   </div>
 </template>

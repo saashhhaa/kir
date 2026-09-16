@@ -10,19 +10,11 @@ const is_mobile = computed(()=>{
   return width.value<800
 })
 
-const emit = defineEmits<{
-  openLogin: [];
-}>();
-
-function handleImageClick() {
-  emit('openLogin');
-}
 </script>
 
 <template>
     <div class="profile">
         <div
-          @click="handleImageClick"
           :style="{ backgroundImage: `url(${profile.IMAGE})` }"
           class="profile__image"
         ></div>
@@ -51,10 +43,12 @@ function handleImageClick() {
         </div>
       </div>
 
-      <div class="playlist">
-        <AudioPlayer v-if="!is_mobile" v-for="track in tracks" :key="track.src" v-bind="track" />
-        <AudioPlayer v-else :artist="tracks[0]?.artist" :src="tracks[0]?.src || ''" :title="tracks[0]?.title || ''"/>
+      <div class="playlist" v-if="is_mobile" >
+        <AudioPlayer  :artist="tracks[0]?.artist" :src="tracks[0]?.src || ''" :title="tracks[0]?.title || ''"/>
       </div>
+  <div class="playlist" v-else >
+    <AudioPlayer v-for="track in tracks" :key="track.src" v-bind="track" />
+  </div>
 </template>
 
 <style scoped lang="scss">
