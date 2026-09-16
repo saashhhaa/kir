@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, onUnmounted } from "vue";
+import {ref, onUnmounted, watch} from "vue";
 import { useAudioManager } from "../composables/useAudioManager";
 
 const props = defineProps<{
@@ -64,7 +64,17 @@ function onError(e: Event) {
   const el = e.target as HTMLAudioElement;
   console.error("Audio error", el.error, props.src);
 }
+watch(
+    () => props.src,
+    () => {
+      if (!audio.value) return;
 
+      audio.value.pause();
+      audio.value.currentTime = 0;
+      currentTime.value = 0;
+      isPlaying.value = false;
+    }
+);
 onUnmounted(() => {
   if (audio.value) unregister(audio.value);
 });

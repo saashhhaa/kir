@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import EntityAudioPlayer from "./AudioPlayer.vue";
+import AudioPlayer from "./AudioPlayer.vue";
 import {onMounted, onUnmounted, ref} from "vue";
 import type { Track } from "../types/trackType.ts";
 
@@ -78,7 +78,7 @@ onUnmounted(() => {
         >
           {{ description }}
         </p>
-        <EntityAudioPlayer
+        <AudioPlayer
           :class="{ hidden: isZoomed }"
           v-if="track"
           :src="track.file_path"
