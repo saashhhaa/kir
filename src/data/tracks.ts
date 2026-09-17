@@ -1,17 +1,19 @@
 import type { Track } from "../types/trackType";
 import { getAudio } from "./assets";
 import audio_1 from "../assets/audio/Порез На Собаке - Теперь Мы Снова Вдвоём.mp3";
+import audio_2 from "../assets/audio/Noize MC - Я не сказочник и не фантаст.mp3";
+import audio_3 from "../assets/audio/The cure - Open.mp3";
 
 export const tracks = [
   {
-    src: audio_1,
-    title: "теперь мы снова вдвоем",
-    artist: "порез на собаке",
+    src: audio_2,
+    title: "^_^",
+    artist: "я сказочник и фантаст",
   },
   {
-    src: audio_1,
-    title: "теперь мы снова вдвоем",
-    artist: "порез на собаке",
+    src: audio_3,
+    title: "open",
+    artist: "the cure",
   },
   {
     src: audio_1,
@@ -111,17 +113,13 @@ export const audio: Track[] = [
     id: 8,
     title: "Silent Sorrow",
     artist: "Saya no Uta",
-    file_path: getAudio(
-      "24/collection_green/Saya no Uta – Silent Sorrow.mp3",
-    ),
+    file_path: getAudio("24/collection_green/Saya no Uta – Silent Sorrow.mp3"),
   },
-   {
+  {
     id: 8,
     title: "Memories",
     artist: "Steve Gabry",
-    file_path: getAudio(
-      "24/collection_green/Steve Gabry – Memories.mp3",
-    ),
+    file_path: getAudio("24/collection_green/Steve Gabry – Memories.mp3"),
   },
   {
     id: 8,
@@ -147,15 +145,13 @@ export const audio: Track[] = [
       "25/collection_cigarets/plaaaato - Topic – Біля берегів моря.m4a",
     ),
   },
-   {
+  {
     id: 9,
     title: "Глюки",
     artist: "Zlypni",
-    file_path: getAudio(
-      "25/collection_cigarets/Zlypni – Глюки.m4a",
-    ),
+    file_path: getAudio("25/collection_cigarets/Zlypni – Глюки.m4a"),
   },
-    {
+  {
     id: 9,
     title: "розмова без слів 2",
     artist: "headachee",
@@ -163,107 +159,83 @@ export const audio: Track[] = [
       "25/collection_cigarets/headachee – розмова без слів 2.m4a",
     ),
   },
-    {
+  {
     id: 10,
     title: "Rusty Lake Family Tune",
     artist: "Victor Butzelaar",
-    file_path: getAudio(
-      "25/Victor Butzelaar – Rusty Lake Family Tune.mp3",
-    ),
+    file_path: getAudio("25/Victor Butzelaar – Rusty Lake Family Tune.mp3"),
   },
-   {
+  {
     id: 11,
     title: "Kladman",
     artist: "XARAKTER",
-    file_path: getAudio(
-      "25/XARAKTER for Discord – Kladman.m4a",
-    ),
+    file_path: getAudio("25/XARAKTER for Discord – Kladman.m4a"),
   },
   {
     id: 12,
     title: "Домовитись",
     artist: "XARAKTER",
-    file_path: getAudio(
-      "25/Xarakter – Домовитись.m4a",
-    ),
+    file_path: getAudio("25/Xarakter – Домовитись.m4a"),
   },
-   {
+  {
     id: 13,
     title: "Свобода",
     artist: "гроб",
-    file_path: getAudio(
-      "25/Егор Летов – Свобода.m4a",
-    ),
+    file_path: getAudio("25/Егор Летов – Свобода.m4a"),
   },
   {
     id: 14,
     title: " Сталинский костюм",
     artist: "Михаил Елизаров",
-    file_path: getAudio(
-      "25/Михаил Елизаров - Сталинский костюм.mp3",
-    ),
+    file_path: getAudio("25/Михаил Елизаров - Сталинский костюм.mp3"),
   },
   {
     id: 15,
-    title: 'gloomy sunday',
+    title: "gloomy sunday",
     artist: "billie holiday",
-    file_path: getAudio(
-        "24/Billie_Holiday_-_Gloomy_Sunday.mp3",
-    ),
+    file_path: getAudio("24/Billie_Holiday_-_Gloomy_Sunday.mp3"),
   },
   {
     id: 16,
-    title: 'Happy Halloween',
+    title: "Happy Halloween",
     artist: "Junky feat Rin",
-    file_path: getAudio(
-        "24/Junky_feat._Kagamine_Rin-Happy_Halloween.mp3",
-    ),
+    file_path: getAudio("24/Junky_feat._Kagamine_Rin-Happy_Halloween.mp3"),
   },
   {
     id: 17,
-    title: 'Kichi',
+    title: "Kichi",
     artist: "Suffer! Suffer!",
-    file_path: getAudio(
-        "24/Kichi – Suffer! Suffer!.mp3",
-    ),
+    file_path: getAudio("24/Kichi – Suffer! Suffer!.mp3"),
   },
   {
     id: 18,
-    title: 'Milk_outside_a_bag_of_milk',
-    file_path: getAudio(
-        "24/Milk_outside_a_bag_of_milk.mp3",
-    ),
+    title: "Milk_outside_a_bag_of_milk",
+    file_path: getAudio("24/Milk_outside_a_bag_of_milk.mp3"),
   },
   {
     id: 19,
-    title: 'Lovely Arps',
-    artist: 'Rain World',
-    file_path: getAudio(
-        "24/Rain World – Lovely Arps.mp3",
-    ),
+    title: "Lovely Arps",
+    artist: "Rain World",
+    file_path: getAudio("24/Rain World – Lovely Arps.mp3"),
   },
   {
     id: 20,
-    title: 'Pornography',
-    artist: 'The Cure',
-    file_path: getAudio(
-        "24/The Cure – Pornography.mp3",
-    ),
+    title: "Pornography",
+    artist: "The Cure",
+    file_path: getAudio("24/The Cure – Pornography.mp3"),
   },
   {
     id: 21,
-    title: 'голобородько толя',
-    artist: 'птицу ешь?',
-    file_path: getAudio(
-        "24/Птицу_ЕМЪ_–_Великомученик_Голобородько_Толик.mp3",
-    ),
+    title: "голобородько толя",
+    artist: "птицу ешь?",
+    file_path: getAudio("24/Птицу_ЕМЪ_–_Великомученик_Голобородько_Толик.mp3"),
   },
   {
     id: 22,
-    title: 'Stories',
-    artist: 'Kuroishi Hitom',
+    title: "Stories",
+    artist: "Kuroishi Hitom",
     file_path: getAudio(
-        "26/Kuroishi_Hitomi_Angel_Feather_Voice_Stories_SkySound_cc.mp3",
+      "26/Kuroishi_Hitomi_Angel_Feather_Voice_Stories_SkySound_cc.mp3",
     ),
   },
 ];
