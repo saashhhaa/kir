@@ -82,12 +82,6 @@ function hideProfile() {
     align-items: center;
   }
 
-  //&__flex-right {
-  //  display: flex;
-  //  gap: 3vw;
-  //  align-items: center;
-  //}
-
   &__main {
     display: flex;
     justify-content: space-between;
@@ -113,9 +107,12 @@ function hideProfile() {
 }
 .hide-button img {
   width: 50%;
+  transform: rotate(90deg);
+  transition: transform 0.2s ease;
 }
-.rotated {
-  transform: rotate(-180deg);
+
+.hide-button img.rotated {
+  transform: rotate(270deg);
 }
 .hiddenProfile {
   padding-top: 5vh;
@@ -139,23 +136,4 @@ function hideProfile() {
     }
   }
 }
-
-//@media (max-width: 800px) {
-//  .profile__flex {
-//    flex-direction: column;
-//    align-items: stretch;
-//  }
-//
-//  .profile__flex-right {
-//    display: contents;
-//  }
-//
-//  .profile__flex-right .colors-bar {
-//    order: 1 !important;
-//  }
-//
-//  .years-bar {
-//    order: 2 !important;
-//  }
-//}
 </style>
