@@ -32,37 +32,33 @@ const filteredPictures = computed(() => {
         ? [pic.hashtag_id]
         : [];
 
-    const matchesHashtag = hashtags.includes(
-      hashTagsStore.currentHashId
-    );
+    const matchesHashtag = hashtags.includes(hashTagsStore.currentHashId);
 
     return matchesYear && matchesCollection && matchesHashtag;
   });
 });
 
-const collectionsStore = useCollectionsStore()
-
+const collectionsStore = useCollectionsStore();
 </script>
 
 <template>
   <div class="feed">
-      <HashTagBar :amount="filteredPictures.length"/>
-      <div v-if="filteredCollections.length !== 0" class="feed__container">
-        <CollectionCard
-          v-for="(col, index) in filteredCollections"
-          :title="col.title"
-          :key="index"
-          @click="collectionsStore.openedCollectionId = col.id"
-        />
+    <HashTagBar :amount="filteredPictures.length" />
+    <div v-if="filteredCollections.length !== 0" class="feed__container">
+      <CollectionCard
+        v-for="(col, index) in filteredCollections"
+        :title="col.title"
+        :key="index"
+        @click="collectionsStore.openedCollectionId = col.id"
+      />
     </div>
-    <PicturesGrid :pictures="filteredPictures"/>
+    <PicturesGrid :pictures="filteredPictures" />
   </div>
-
 </template>
 
 <style lang="scss">
 .feed {
-  padding: 0vh 5vw;
+  padding: 0 5vw;
   background-color: var(--feed-back);
   min-height: 100vh;
   width: 100%;
@@ -76,12 +72,11 @@ const collectionsStore = useCollectionsStore()
     flex-wrap: wrap;
     margin-bottom: 5vh;
   }
-
 }
 @media (max-width: 800px) {
   .feed {
     &__container {
-    gap: 10px;
+      gap: 10px;
     }
   }
 }
