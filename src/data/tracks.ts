@@ -1,8 +1,8 @@
 import type { Track } from "../types/trackType";
 import { getAudio } from "./assets";
-import audio_1 from "../assets/audio/Порез На Собаке - Теперь Мы Снова Вдвоём.mp3";
+import audio_1 from "../assets/audio/Noize MC - Гой Еси.mp3";
 import audio_2 from "../assets/audio/Noize MC - Я не сказочник и не фантаст.mp3";
-import audio_3 from "../assets/audio/The cure - Open.mp3";
+import audio_3 from "../assets/audio/Noize Mc - трава у дома.mp3";
 
 export const tracks = [
   {
@@ -12,13 +12,13 @@ export const tracks = [
   },
   {
     src: audio_3,
-    title: "open",
-    artist: "the cure",
+    title: ":b",
+    artist: "трава у дома",
   },
   {
     src: audio_1,
-    title: "теперь мы снова вдвоем",
-    artist: "порез на собаке",
+    title: "8)",
+    artist: "гой соси",
   },
 ];
 
