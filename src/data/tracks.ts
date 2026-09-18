@@ -233,7 +233,7 @@ export const audio: Track[] = [
   {
     id: 22,
     title: "Stories",
-    artist: "Kuroishi Hitom",
+    artist: "Kuroishi Hitomi",
     file_path: getAudio(
       "26/Kuroishi_Hitomi_Angel_Feather_Voice_Stories_SkySound_cc.mp3",
     ),
