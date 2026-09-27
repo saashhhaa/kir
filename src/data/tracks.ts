@@ -238,4 +238,12 @@ export const audio: Track[] = [
       "26/Kuroishi_Hitomi_Angel_Feather_Voice_Stories_SkySound_cc.mp3",
     ),
   },
+  {
+    id: 23,
+    title: "Главное хотеть",
+    artist: "4 позиции бруно",
+    file_path: getAudio(
+        "27/4-pozicii-bruno-glavnoe-khotet.mp3",
+    ),
+  },
 ];
