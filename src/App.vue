@@ -1,21 +1,18 @@
 <script setup lang="ts">
-import Collection from './widgets/Collection.vue';
-import Feed from './widgets/Feed.vue';
-import Header from './widgets/Header.vue';
-import { useCollectionsStore } from './stores/colStore.ts';
-import Footer from './components/Footer.vue';
+import PicsCollection from "./widgets/PicsCollection.vue";
+import Feed from "./widgets/Feed.vue";
+import Header from "./widgets/Header.vue";
+import { useCollectionsStore } from "./stores/colStore.ts";
+import Footer from "./components/Footer.vue";
 
-const collectionsStore = useCollectionsStore()
-
+const collectionsStore = useCollectionsStore();
 </script>
 
 <template>
-  <Header/>
-  <Feed v-if="collectionsStore.openedCollectionId===null"/>
-  <Collection v-else />
-  <Footer/>
+  <div class="main">
+    <Header />
+    <Feed v-if="collectionsStore.openedCollectionId === null" />
+    <PicsCollection v-else />
+    <Footer />
+  </div>
 </template>
-
-<style scoped>
-
-</style>

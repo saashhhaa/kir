@@ -6,6 +6,7 @@ import { audio } from "../data/tracks.ts";
 import PicturesGrid from "../shared/PicturesGrid.vue";
 import { useCollectionsStore } from "../stores/colStore.ts";
 import CounterPics from "../shared/CounterPics.vue";
+import {useInfoVisibility} from "../stores/infoVisibility.ts";
 
 const collectionsStore = useCollectionsStore();
 
@@ -19,6 +20,8 @@ const currCollection = collections.find(
 const trackList = audio.filter((song) =>
   currCollection?.tracks === song.id,
 );
+const infoVisibilityStore = useInfoVisibility()
+
 </script>
 
 <template>
@@ -26,9 +29,10 @@ const trackList = audio.filter((song) =>
     <PicturesGrid :pictures="filteredPictures"/>
     <CounterPics class="collection__counter" :amount="filteredPictures.length"/>
 
-    <div v-if="trackList.length!==0" class="collection__playlist">
+    <div v-if="trackList.length!==0 && infoVisibilityStore.infoVisibility" class="collection__playlist">
       <AudioPlayer
-        v-for="track in trackList"
+        v-for="(track, index) in trackList"
+        :key="index"
         :src="track.file_path"
         :artist="track.artist"
         :title="track.title"

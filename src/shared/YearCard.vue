@@ -19,10 +19,15 @@ function handleClick(year: number) {
 </script>
 
 <template>
-  <div @click="handleClick(year)" :class="{ 'active': isOpened }" class="card">
-    <img :class="{ 'active': isOpened }" :src="isOpened ? folder_open : folder" alt="" class="card__icon" />
-    
-    <p :class="{ 'active': isOpened }" class="card__year">{{ year }}</p>
+  <div @click="handleClick(year)" :class="{ active: isOpened }" class="card">
+    <img
+      :class="{ active: isOpened }"
+      :src="isOpened ? folder_open : folder"
+      alt=""
+      class="card__icon"
+    />
+
+    <p :class="{ active: isOpened }" class="card__year">{{ year }}</p>
   </div>
 </template>
 
@@ -36,7 +41,7 @@ function handleClick(year: number) {
   cursor: pointer;
 
   &__icon {
-    opacity: .6;
+    opacity: 0.6;
     width: 15px;
 
     &.active {
@@ -48,16 +53,22 @@ function handleClick(year: number) {
     color: var(--secondary-text);
 
     &.active {
-      color:var( --accent-color);;
+      color: var(--accent-color);
     }
   }
 
   &.active {
-   border-color: var( --accent-color);
+    border-color: var(--accent-color);
   }
 
   &:hover {
     filter: brightness(1.4);
+  }
+}
+
+@media (max-width: 500px) {
+  .card {
+    padding: 10px 15px !important;
   }
 }
 </style>
