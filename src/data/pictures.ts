@@ -214,18 +214,38 @@ export const pictures: Picture[] = [
     hashtag_id: 2,
   },
   {
+    description: "боль в горле",
+    image_url: getImage("27/болезнь.png"),
+    year: 27,
+    hashtag_id: 2,
+  },
+  {
+    title: "коллаж №1",
+    description: "мои друзья",
+    image_url: getImage("27/коллаж1.JPG"),
+    year: 27,
+    hashtag_id: 1,
+    track_id: 24,
+  },
+  {
+    title: "коллаж №2",
+    image_url: getImage("27/коллаж2.JPG"),
+    year: 27,
+    hashtag_id: 2,
+  },
+  {
     title: "cc №1",
     image_url: getImage("26/cc.png"),
     year: 26,
     hashtag_id: 2,
-    track_id: 22
+    track_id: 22,
   },
   {
     title: "cc №2",
     image_url: getImage("26/cc2.png"),
     year: 26,
     hashtag_id: 2,
-    track_id: 22
+    track_id: 22,
   },
   {
     image_url: getImage("27/лица.png"),
@@ -256,7 +276,7 @@ export const pictures: Picture[] = [
   },
   {
     title: "Всем отчего-то кажется, что я — лох ",
-    description: 'А если вдруг окажется, что я — бог?',
+    description: "А если вдруг окажется, что я — бог?",
     image_url: getImage("24/голобородько_толик.png"),
     year: 24,
     hashtag_id: 1,
@@ -277,7 +297,7 @@ export const pictures: Picture[] = [
   },
   {
     title: "soir noir",
-    description: 'soir bleu',
+    description: "soir bleu",
     image_url: getImage("24/soir_noir.png"),
     year: 24,
     hashtag_id: 1,
@@ -300,7 +320,7 @@ export const pictures: Picture[] = [
     track_id: 17,
   },
   {
-    title: 'Happy Halloween',
+    title: "Happy Halloween",
     image_url: getImage("24/хэллоуин.png"),
     year: 24,
     hashtag_id: 1,
@@ -313,7 +333,7 @@ export const pictures: Picture[] = [
   },
 
   {
-    title: 'теперь лишь человек',
+    title: "теперь лишь человек",
     image_url: getImage("24/бинты.png"),
     year: 24,
     hashtag_id: 1,
@@ -364,7 +384,7 @@ export const pictures: Picture[] = [
     image_url: getImage("25/рыба.png"),
     year: 25,
     hashtag_id: 1,
-    track_id:10,
+    track_id: 10,
   },
   {
     title: "вот бы справить мне костюм себе из...",
@@ -372,7 +392,7 @@ export const pictures: Picture[] = [
     image_url: getImage("25/сталин.png"),
     year: 25,
     hashtag_id: 1,
-    track_id: 14
+    track_id: 14,
   },
   {
     title: "yume",
@@ -394,13 +414,13 @@ export const pictures: Picture[] = [
     image_url: getImage("25/freedom.png"),
     year: 25,
     hashtag_id: 1,
-    track_id:13
+    track_id: 13,
   },
   {
     title: "зефир",
     image_url: getImage("25/the_fear.png"),
     year: 25,
-    hashtag_id: [1, 2],  // ДВОЙНОЙ ХЭШТЕГ
+    hashtag_id: [1, 2], // ДВОЙНОЙ ХЭШТЕГ
   },
   {
     image_url: getImage("25/woman.png"),
@@ -419,7 +439,7 @@ export const pictures: Picture[] = [
     image_url: getImage("25/xarakter2.png"),
     year: 25,
     hashtag_id: [1, 3], // ДВОЙНОЙ ХЭШТЕГ
-    track_id: 12, 
+    track_id: 12,
   },
   {
     image_url: getImage("26/коты_раскраска2.jpg"),
@@ -464,12 +484,12 @@ export const pictures: Picture[] = [
   {
     image_url: getImage("26/скетч_монах.jpg"),
     year: 26,
-    hashtag_id:[ 3,2],
+    hashtag_id: [3, 2],
   },
   {
     image_url: getImage("26/скетч_женщины.jpg"),
     year: 26,
-    hashtag_id: [2,3],
+    hashtag_id: [2, 3],
   },
   {
     image_url: getImage("26/скетч_шахматы.jpg"),
