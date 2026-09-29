@@ -229,7 +229,7 @@ export const pictures: Picture[] = [
   },
   {
     title: "коллаж №2",
-    image_url: getImage("27/коллаж2.JPG"),
+    image_url: getImage("27/коллаж2.PNG"),
     year: 27,
     hashtag_id: 2,
   },
@@ -283,7 +283,7 @@ export const pictures: Picture[] = [
     track_id: 21,
   },
   {
-    description: 'устала болеть',
+    description: "устала болеть",
     image_url: getImage("27/болезненный.png"),
     year: 27,
     hashtag_id: 1,

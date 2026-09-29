@@ -242,8 +242,14 @@ export const audio: Track[] = [
     id: 23,
     title: "Главное хотеть",
     artist: "4 позиции бруно",
+    file_path: getAudio("27/4-pozicii-bruno-glavnoe-khotet.mp3"),
+  },
+  {
+    id: 24,
+    title: "приход архангела",
+    artist: "4 позиции бруно",
     file_path: getAudio(
-        "27/4-pozicii-bruno-glavnoe-khotet.mp3",
+      "27/4_Pozicii_Bruno_-_Prihod_Arhangela_(SkySound7.com).mp3",
     ),
   },
 ];
