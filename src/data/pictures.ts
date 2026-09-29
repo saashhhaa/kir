@@ -283,6 +283,13 @@ export const pictures: Picture[] = [
     track_id: 21,
   },
   {
+    description: 'устала болеть',
+    image_url: getImage("27/болезненный.png"),
+    year: 27,
+    hashtag_id: 1,
+    track_id: 23,
+  },
+  {
     title: "поможешь бабуле?",
     image_url: getImage("24/бабуля.png"),
     year: 24,
