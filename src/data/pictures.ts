@@ -227,12 +227,7 @@ export const pictures: Picture[] = [
     hashtag_id: 1,
     track_id: 24,
   },
-  {
-    title: "коллаж №2",
-    image_url: getImage("27/коллаж2.PNG"),
-    year: 27,
-    hashtag_id: 2,
-  },
+
   {
     title: "cc №1",
     image_url: getImage("26/cc.png"),
@@ -251,6 +246,30 @@ export const pictures: Picture[] = [
     image_url: getImage("27/лица.png"),
     year: 27,
     hashtag_id: 2,
+  },
+  {
+    title: "берреза",
+    image_url: getImage("27/берреза.png"),
+    year: 27,
+    hashtag_id: 1,
+  },
+  {
+    title: "карандаш #1",
+    image_url: getImage("27/с коровой.png"),
+    year: 27,
+    hashtag_id: [2, 3],
+  },
+  {
+    title: "карандаш №2",
+    image_url: getImage("27/стадик светотень.png"),
+    year: 27,
+    hashtag_id: [2, 3],
+  },
+  {
+    title: "карандаш №3",
+    image_url: getImage("27/стадик техника.png"),
+    year: 27,
+    hashtag_id: [2, 3],
   },
   {
     image_url: getImage("24/redSketch.png"),
@@ -528,8 +547,7 @@ export const pictures: Picture[] = [
   },
   {
     title: "салли 🦷 кромсали",
-    description:
-      "Поздравляю сали сосали с 10и летием. Мне же в этом году исполняется 20.",
+    description: "Поздравляю сали сосали с 10и летием.",
     image_url: getImage("27/сф.png"),
     year: 27,
     hashtag_id: 1,
