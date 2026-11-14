@@ -254,6 +254,12 @@ export const pictures: Picture[] = [
     hashtag_id: 1,
   },
   {
+    description: "светлая память коле кукину",
+    image_url: getImage("27/батарея2.png"),
+    year: 27,
+    hashtag_id: 1,
+  },
+  {
     title: "карандаш #1",
     image_url: getImage("27/с коровой.png"),
     year: 27,
@@ -549,6 +555,12 @@ export const pictures: Picture[] = [
     title: "салли 🦷 кромсали",
     description: "Поздравляю сали сосали с 10и летием.",
     image_url: getImage("27/сф.png"),
+    year: 27,
+    hashtag_id: 1,
+  },
+  {
+    title: "солдатики",
+    image_url: getImage("27/солдатики.png"),
     year: 27,
     hashtag_id: 1,
   },

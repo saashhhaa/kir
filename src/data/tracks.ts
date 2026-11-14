@@ -252,4 +252,10 @@ export const audio: Track[] = [
       "27/4_Pozicii_Bruno_-_Prihod_Arhangela_(SkySound7.com).mp3",
     ),
   },
+  {
+    id: 25,
+    title: "где то в небесах",
+    artist: "сибирска язва",
+    file_path: getAudio("27/Сибирская Язва - Где-то в небесах.mp3"),
+  },
 ];
