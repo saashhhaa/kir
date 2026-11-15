@@ -258,6 +258,7 @@ export const pictures: Picture[] = [
     image_url: getImage("27/батарея2.png"),
     year: 27,
     hashtag_id: 1,
+    track_id: 25,
   },
   {
     title: "карандаш #1",
